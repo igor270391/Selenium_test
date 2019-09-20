@@ -21,4 +21,4 @@ Feature: Login feature
     Given url address "login/index.php"
     When user navigate to drop down language menu
     And select English (en) language
-#    Then User should has the page log in in "English" language
+    Then User should has the page log-in in "en" language
