@@ -8,3 +8,4 @@ Feature: check lateral menu when the user has already logged
   Scenario: user closes lateral menu for view home page in full screen
     Given set up url address "login/index.php"
     When click on the button of the lateral menu
+    Then lateral menu should be closed

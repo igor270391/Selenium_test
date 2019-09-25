@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68de7c45-aa88-436c-bba7-78e8e546beef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/features/lateralBlock.feature" afterDir="false" />
+    <list default="true" id="68de7c45-aa88-436c-bba7-78e8e546beef" name="Default Changelist" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/lateralBlock.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/lateralBlock.feature" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,8 +168,24 @@
       <workItem from="1568900638586" duration="3898000" />
       <workItem from="1568907789071" duration="138000" />
       <workItem from="1568909409969" duration="222000" />
-      <workItem from="1568963643906" duration="16862000" />
+      <workItem from="1568963643906" duration="17482000" />
+      <workItem from="1569232649071" duration="451000" />
+      <workItem from="1569233129972" duration="19000" />
+      <workItem from="1569233689298" duration="6000" />
+      <workItem from="1569242470725" duration="656000" />
+      <workItem from="1569250594667" duration="4450000" />
+      <workItem from="1569309025539" duration="5569000" />
+      <workItem from="1569314914655" duration="510000" />
+      <workItem from="1569395877131" duration="2832000" />
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1568995380565</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568995380566</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,10 +204,23 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PyBehaveRunConfigurationType">
+        <watch expression="locals_" />
+        <watch expression="locals_" />
+        <watch expression="locals_" />
+      </configuration>
+    </watches-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$main_steps.coverage" NAME="main_steps Coverage Results" MODIFIED="1568898856787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_invalid_username_and_invalid_password_on_log_in.coverage" NAME="login.feature:the user enters invalid username and invalid password on log in Coverage Results" MODIFIED="1568891681814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_lateral_menu_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes lateral menu for view home page in full screen Coverage Results" MODIFIED="1568994395905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_lateral_menu_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes lateral menu for view home page in full screen Coverage Results" MODIFIED="1569399763865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_login_in_one_step.coverage" NAME="lateralBlock.feature:login in one step Coverage Results" MODIFIED="1568991480863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature.coverage" NAME="login.feature Coverage Results" MODIFIED="1568900708162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_user_changes_the_language_in__English__en__.coverage" NAME="login.feature:user changes the language in &quot;English (en)&quot; Coverage Results" MODIFIED="1568971458906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />

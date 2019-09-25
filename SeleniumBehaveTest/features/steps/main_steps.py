@@ -1,13 +1,12 @@
 import time
 from behave import *
+from time import sleep
 from yaml import load
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
-import os.path
-from os import path
 
 # wait = WebDriverWait(browser, 5)
 # try:
@@ -126,12 +125,15 @@ def step_impl(context, text):
 # user closes lateral menu for view home page in full screen_______________________________________________________________-
 @step("click on the button of the lateral menu")
 def step_impl(context):
-    # datamt_status = "//*[@data-mtstatus='mttoggled']"
-    # pagewrapper = "//*[@class ='page-wrapper chiller-theme toggled']"
-    if :
-        button = context.browser.find_element_by_xpath("//*[@id='show-sidebar']").click()
-    else:
-        print("Error")
+    button = context.browser.find_element_by_xpath("//*[@class='fas fa-chevron-left']")
+    context.browser.execute_script("arguments[0].click();", button)
+    time.sleep(3)
 
-
-# @then("lateral menu should be closed")
+@then("lateral menu should be closed")
+def step_impl(context):
+    time.sleep(3)
+    try:
+        datamt_status_close = context.browser.find_element_by_xpath("//body[@data-mtstatus='notmttoggled']")
+        print("Lateral menu is closed")
+    except:
+        print("The xpath is invalid")

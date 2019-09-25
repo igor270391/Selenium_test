@@ -1,4 +1,4 @@
-# Created by IgorSenkiv at 16/09/2019
+# Created by IgorSenkiv at 16/09/2019________
 Feature: Login feature
 
   Scenario: the user enters valid username and valid password on log in
