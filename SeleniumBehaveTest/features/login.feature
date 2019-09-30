@@ -22,3 +22,9 @@ Feature: Login feature
     When user navigate to drop down language menu
     And select English (en) language
     Then User should has the page log-in in "en" language
+
+  Scenario: user execute logs out from portal erikson
+    Given url address "login/index.php"
+    When user enters a username "i.senkiv"
+    And user enters a password "Totara_2019"
+    Then navigate to menu dropdown end ckick ESCI

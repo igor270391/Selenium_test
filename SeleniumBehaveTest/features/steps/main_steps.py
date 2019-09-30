@@ -9,22 +9,8 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
 
-# wait = WebDriverWait(browser, 5)
-# try:
-#     page_loaded = wait.until_not(
-#         lambda browser: browser.current_url == login_page
-#     )
-# except TimeoutException:
-#     self.fail("Loading timeout expired")
-#
-# self.assertEqual(
-#     browser.current_url,
-#     correct_page,
-#     msg="Successful Login"
-# )
 
 # Login feature
-
 @given('url address "{text}"')
 def step_impl(context, text):
     context.settings = load(open('features\conf.yaml').read())
@@ -34,7 +20,6 @@ def step_impl(context, text):
         context.browser.get(basic_url)
     context.browser.get('https://{}/'.format(url) + text)
     time.sleep(2)
-
 
 
 @when('user enters a username "{user_name}"')
@@ -59,8 +44,9 @@ def step_impl(context):
 def step_impl(context, title_test):
     def step_impl(context, title_test):
         # I can use also less complicated way like "//*[text()='et.erickson.it: Expert Teacher']"
-        xpath_title_text = "//*[conteins(text()='et.erickson.it: Expert Teacher')]"
+        xpath_title_text = "//*[contains(text()='et.erickson.it: Expert Teacher')]"
         actual_massage = context.browser.find_element_by_xpath(xpath_title_text).text
+        time.sleep(1)
         assert actual_massage == title_test
 
 
@@ -69,17 +55,8 @@ def step_impl(context, title_test):
 def step_impl(context, expected_errore_message):
     xpath_errore_message = "//*[@id='loginerrormessage']"
     actual_result = context.browser.find_element_by_xpath(xpath_errore_message).text
+    time.sleep(3)
     assert actual_result == expected_errore_message
-
-
-# Select on drop down menu "English (en) language"
-# @when("user navigate to drop down language menu")
-# def step_impl(context):
-#   xpath_menu_language_dropdown = "//*[@class='custom-select langmenu']"
-#   dropdown_language_menu = context.browser.find_element_by_xpath(xpath_menu_language_dropdown)
-#   # WebDriverWait(context, 3)
-#   action = ActionChains(context.browser)
-#   action.move_to_element_with_offset(dropdown_language_menu)
 
 @when("user navigate to drop down language menu")
 def step_impl(context):
@@ -131,14 +108,47 @@ def step_impl(context):
     context.browser.execute_script("arguments[0].click();", button)
     time.sleep(1)
 
-    # xpath = "//i[@class ='fas fa-chevron-left']"
-    # button_x = context.browser.find_element_by_xpath(xpath)
     class_name = button.get_attribute('class')
     if class_name == "fas fa-chevron-right":
         context.browser.execute_script("arguments[0].click();", button)
         time.sleep(2)
     else:
         raise NameError('close sidebar action is not executed')
+
+
+@step("scroll down the right sidebar")
+def step_impl(context):
+    xpth_target = "//h2[contains(text(),'I miei nuovi badge')]"
+    target = context.browser.find_element_by_xpath(xpth_target)
+    context.browser.execute_script('arguments[0].scrollIntoView(true);', target)
+    time.sleep(2)
+
+
+@step("scroll down the content of the page")
+def step_impl(context):
+    xpath_footer = "//footer[@id='page-footer']"
+    target_footer = context.browser.find_element_by_xpath(xpath_footer)
+    context.browser.execute_script('arguments[0].scrollIntoView(true);', target_footer)
+    time.sleep(2)
+
+
+@then("the sidebar and content of the page should be scrolled")
+def step_impl(context):
+    expected_result_a = context.browser.find_element_by_xpath("//h2[contains(text(),'I miei nuovi badge')]")
+    expected_result_b = context.browser.find_element_by_xpath("//footer[@id='page-footer']")
+    if expected_result_a.is_displayed():
+        print(expected_result_a)
+        if expected_result_b.is_displayed():
+          print("both element visible on the screen!")
+    else:
+        raise NameError('Elements there are not visible on the screen!!!')
+
+# Future Login/Log out
+@then("navigate to menu dropdown end ckick ESCI")
+def step_impl(context):
+    xpath_user_action_menu = "//div[@class='usermenu']/div"
+    user_menu = context.browser.find_element_by_xpath(xpath_user_action_menu)
+    actions = ActionChains(context).move_to_element(user_menu)
 
 
 

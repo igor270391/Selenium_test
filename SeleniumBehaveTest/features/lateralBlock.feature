@@ -8,7 +8,9 @@ Feature: check lateral menu when the user has already logged
   Scenario: user closes sidebar for view home page in full screen
     Given set up url address "login/index.php"
     When click on the button to close and reopen the sidebar
-#    And sidebar is hidden
+    And scroll down the right sidebar
+    And scroll down the content of the page
+    Then the sidebar and content of the page should be scrolled
 
 
 
