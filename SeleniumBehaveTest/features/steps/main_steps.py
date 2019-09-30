@@ -2,6 +2,7 @@ import time
 from behave import *
 from time import sleep
 from yaml import load
+import sqlite3
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
@@ -123,17 +124,22 @@ def step_impl(context, text):
 
 
 # user closes lateral menu for view home page in full screen_______________________________________________________________-
-@step("click on the button of the lateral menu")
+@step("click on the button to close and reopen the sidebar")
 def step_impl(context):
-    button = context.browser.find_element_by_xpath("//*[@class='fas fa-chevron-left']")
+    btt_xpth = "//a[@id='show-sidebar']/i"
+    button = context.browser.find_element_by_xpath(btt_xpth)
     context.browser.execute_script("arguments[0].click();", button)
-    time.sleep(3)
+    time.sleep(1)
 
-@then("lateral menu should be closed")
-def step_impl(context):
-    time.sleep(3)
-    try:
-        datamt_status_close = context.browser.find_element_by_xpath("//body[@data-mtstatus='notmttoggled']")
-        print("Lateral menu is closed")
-    except:
-        print("The xpath is invalid")
+    # xpath = "//i[@class ='fas fa-chevron-left']"
+    # button_x = context.browser.find_element_by_xpath(xpath)
+    class_name = button.get_attribute('class')
+    if class_name == "fas fa-chevron-right":
+        context.browser.execute_script("arguments[0].click();", button)
+        time.sleep(2)
+    else:
+        raise NameError('close sidebar action is not executed')
+
+
+
+

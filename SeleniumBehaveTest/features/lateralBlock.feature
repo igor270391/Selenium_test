@@ -5,7 +5,10 @@ Feature: check lateral menu when the user has already logged
     Given set up url address "login/index.php"
 
 
-  Scenario: user closes lateral menu for view home page in full screen
+  Scenario: user closes sidebar for view home page in full screen
     Given set up url address "login/index.php"
-    When click on the button of the lateral menu
-    Then lateral menu should be closed
+    When click on the button to close and reopen the sidebar
+#    And sidebar is hidden
+
+
+

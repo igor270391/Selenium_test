@@ -55,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Behave.lateralBlock.feature:user closes lateral menu for view home page in full screen">
+  <component name="RunManager" selected="Behave.lateralBlock.feature:user closes sidebar for view home page in full screen">
     <configuration name="lateralBlock.feature:login in one step" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
       <module name="SeleniumBehaveTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -86,7 +86,7 @@
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="login.feature" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
+    <configuration name="lateralBlock.feature:user closes sidebar for view home page in full screen" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
       <module name="SeleniumBehaveTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -96,7 +96,8 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/login.feature" />
+      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/lateralBlock.feature" />
+      <SCENRAIO_NAMES SCENRAIO_NAMES="user closes sidebar for view home page in full screen" />
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
@@ -139,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Behave.lateralBlock.feature:user closes sidebar for view home page in full screen" />
+        <item itemvalue="Python.main_steps" />
         <item itemvalue="Behave.lateralBlock.feature:user closes lateral menu for view home page in full screen" />
         <item itemvalue="Behave.lateralBlock.feature:login in one step" />
         <item itemvalue="Behave.login.feature:user changes the language in &quot;English (en)&quot;" />
-        <item itemvalue="Behave.login.feature" />
-        <item itemvalue="Python.main_steps" />
       </list>
     </recent_temporary>
   </component>
@@ -177,6 +178,9 @@
       <workItem from="1569309025539" duration="5569000" />
       <workItem from="1569314914655" duration="510000" />
       <workItem from="1569395877131" duration="2832000" />
+      <workItem from="1569598219116" duration="33000" />
+      <workItem from="1569598328719" duration="3743000" />
+      <workItem from="1569831001926" duration="7079000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1568995380565</created>
@@ -218,9 +222,10 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$main_steps.coverage" NAME="main_steps Coverage Results" MODIFIED="1568898856787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$main_steps.coverage" NAME="main_steps Coverage Results" MODIFIED="1569833575796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_invalid_username_and_invalid_password_on_log_in.coverage" NAME="login.feature:the user enters invalid username and invalid password on log in Coverage Results" MODIFIED="1568891681814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_lateral_menu_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes lateral menu for view home page in full screen Coverage Results" MODIFIED="1569399763865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_sidebar_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes sidebar for view home page in full screen Coverage Results" MODIFIED="1569838607214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_lateral_menu_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes lateral menu for view home page in full screen Coverage Results" MODIFIED="1569598586561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_login_in_one_step.coverage" NAME="lateralBlock.feature:login in one step Coverage Results" MODIFIED="1568991480863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature.coverage" NAME="login.feature Coverage Results" MODIFIED="1568900708162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_user_changes_the_language_in__English__en__.coverage" NAME="login.feature:user changes the language in &quot;English (en)&quot; Coverage Results" MODIFIED="1568971458906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
