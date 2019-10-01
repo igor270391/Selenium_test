@@ -38,6 +38,7 @@ def step_impl(context, password):
 def step_impl(context):
     xpath_login_button = "//*[@id='loginbtn']"
     context.browser.find_element_by_xpath(xpath_login_button).click()
+    time.sleep(3)
 
 
 @then('I should have a title "{title_test}"')
@@ -46,9 +47,8 @@ def step_impl(context, title_test):
         # I can use also less complicated way like "//*[text()='et.erickson.it: Expert Teacher']"
         xpath_title_text = "//*[contains(text()='et.erickson.it: Expert Teacher')]"
         actual_massage = context.browser.find_element_by_xpath(xpath_title_text).text
-        time.sleep(1)
         assert actual_massage == title_test
-
+        time.sleep(2)
 
 # Login feature with invalid credential__________________________________________________________________________________
 @then('I should have a message "{expected_errore_message}"')
@@ -144,11 +144,25 @@ def step_impl(context):
         raise NameError('Elements there are not visible on the screen!!!')
 
 # Future Login/Log out
-@then("navigate to menu dropdown end ckick ESCI")
+@then("navigate to menu dropdown end click esci")
 def step_impl(context):
-    xpath_user_action_menu = "//div[@class='usermenu']/div"
-    user_menu = context.browser.find_element_by_xpath(xpath_user_action_menu)
-    actions = ActionChains(context).move_to_element(user_menu)
+    xpath_user_action_menu = "//*[@class='userbutton']"
+    user_menu = context.browser.find_element_by_xpath(xpath_user_action_menu).click()
+    time.sleep(2)
+
+    xpath_list_1 = "//ul[@class='menubar']/li/a/span"
+    options_1 = context.browser.find_elements_by_xpath(xpath_list_1)
+    xpath_list_2 = "//ul[@class='menu  align-tr-br']/li/a/span"
+    options_2 = context.browser.find_elements_by_xpath(xpath_list_2)
+    for element in options_1:
+        for elem in options_2:
+            if "Esci" in elem.text:
+                elem.click()
+                if "Esci" in element.text:
+                    element.click()
+            else:
+                raise NameError('Erore')
+
 
 
 
