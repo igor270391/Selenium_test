@@ -50,6 +50,7 @@ def step_impl(context, title_test):
         assert actual_massage == title_test
         time.sleep(2)
 
+
 # Login feature with invalid credential__________________________________________________________________________________
 @then('I should have a message "{expected_errore_message}"')
 def step_impl(context, expected_errore_message):
@@ -57,6 +58,7 @@ def step_impl(context, expected_errore_message):
     actual_result = context.browser.find_element_by_xpath(xpath_errore_message).text
     time.sleep(3)
     assert actual_result == expected_errore_message
+
 
 @when("user navigate to drop down language menu")
 def step_impl(context):
@@ -70,6 +72,7 @@ def step_impl(context):
     time.sleep(2)
     context.browser.find_element_by_xpath(xpath_english_language).click()
 
+
 @then('User should has the page log-in in "{expected_result}" language')
 def step_impl(context, expected_result):
     xpath_language_page = "//option[@value='en']"
@@ -77,6 +80,7 @@ def step_impl(context, expected_result):
     time.sleep(2)
     if actual_result == 0:
         assert print(expected_result)
+
 
 # lateralBlock.feature___________________________________________________________________________________________________
 # /login in one step----------------------------------------------------------------------------------------------------
@@ -89,7 +93,7 @@ def step_impl(context, text):
         context.browser.get(basic_url)
     context.browser.get('https://{}/'.format(url) + text)
     time.sleep(2)
-    username ="i.senkiv"
+    username = "i.senkiv"
     password = "Totara_2019"
     xpath_username_field = "//*[@id='username']"
     context.browser.find_element_by_xpath(xpath_username_field).send_keys(username)
@@ -139,31 +143,22 @@ def step_impl(context):
     if expected_result_a.is_displayed():
         print(expected_result_a)
         if expected_result_b.is_displayed():
-          print("both element visible on the screen!")
+            print("both element visible on the screen!")
     else:
         raise NameError('Elements there are not visible on the screen!!!')
 
-# Future Login/Log out
+
+# Future Login/Log out_______________________________________________
 @then("navigate to menu dropdown end click esci")
 def step_impl(context):
     xpath_user_action_menu = "//*[@class='userbutton']"
     user_menu = context.browser.find_element_by_xpath(xpath_user_action_menu).click()
-    time.sleep(2)
-
-    xpath_list_1 = "//ul[@class='menubar']/li/a/span"
-    options_1 = context.browser.find_elements_by_xpath(xpath_list_1)
-    xpath_list_2 = "//ul[@class='menu  align-tr-br']/li/a/span"
-    options_2 = context.browser.find_elements_by_xpath(xpath_list_2)
-    for element in options_1:
-        for elem in options_2:
-            if "Esci" in elem.text:
-                elem.click()
-                if "Esci" in element.text:
-                    element.click()
-            else:
-                raise NameError('Erore')
-
-
-
-
-
+    time.sleep(0.5)
+    xpath_list = "//*[@id='action-menu-0-menu']/li/a"
+    options = context.browser.find_elements_by_xpath(xpath_list)
+    for i in options:
+        if "Esci".upper() in i.text:
+            i.click()
+        time.sleep(1)
+    else:
+        raise ("Errore!!!")
