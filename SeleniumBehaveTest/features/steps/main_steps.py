@@ -84,7 +84,7 @@ def step_impl(context, expected_result):
 
 # lateralBlock.feature___________________________________________________________________________________________________
 # /login in one step----------------------------------------------------------------------------------------------------
-@given('set up url address "{text}"')
+@given('set up url address "{text}" and execute log in')
 def step_impl(context, text):
     context.settings = load(open('features\conf.yaml').read())
     url = context.settings['base_url']
@@ -148,7 +148,7 @@ def step_impl(context):
         raise NameError('Elements there are not visible on the screen!!!')
 
 
-# Future Login/Log out_______________________________________________
+# Login.features/Log out......................
 @then("navigate to menu dropdown end click esci")
 def step_impl(context):
     xpath_user_action_menu = "//*[@class='userbutton']"
@@ -161,4 +161,43 @@ def step_impl(context):
             i.click()
         time.sleep(1)
     else:
-        raise ("Errore!!!")
+        raise NameError("Errore!!!")
+
+#сheck status of programs.feature..........
+@when("user clicks on the chosen filter")
+def step_impl(context):
+    filter_not_started = context.browser.find_element_by_xpath("//label[@class='btn btn-secondary btn-notstarted']")
+    filter_incourse = context.browser.find_element_by_xpath("//label[@class='btn btn-secondary btn-incourse']")
+    filter_completed = context.browser.find_element_by_xpath("//label[@class='btn btn-secondary btn-completed']")
+    xpath_container_filter = "//div[@class='mtfilter_prg container-fluid text-right']/label"
+    container_filter = context.browser.find_element_by_xpath(xpath_container_filter)
+    label_filter = container_filter.get_attribute('class')
+    time.sleep(2)
+    if label_filter == 'btn btn-secondary btn-incourse' and label_filter == 'btn btn-secondary btn-completed':
+        filter_incourse.click()
+        time.sleep(2)
+    else:
+        raise NameError("Errore!!!")
+        # filter_completed.click()
+        # time.sleep(2)
+        # print("Are displayed only not started courses")
+        # if label_filter == 'btn btn-secondary btn-notstarted' and label_filter == 'btn btn-secondary btn-completed':
+        #     time.sleep(2)
+        #     filter_not_started.click()
+        #     time.sleep(2)
+        #     filter_completed.click()
+        #     time.sleep(2)
+        #     print("Are displayed only incourse courses")
+        #     if label_filter == 'btn btn-secondary btn-notstarted' and label_filter == 'btn btn-secondary btn-incourse':
+        #         time.sleep(2)
+        #         filter_not_started.click()
+        #         time.sleep(2)
+        #         filter_incourse.click()
+        #         time.sleep(2)
+        #         print("Are displayed only completed courses")
+    # else:
+    #     raise NameError("Errore!!!")
+
+
+# @then("should be remain only the list of corses reffered to selected filter")
+# def step_impl(context):
