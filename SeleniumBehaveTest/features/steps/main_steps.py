@@ -163,6 +163,3 @@ def step_impl(context):
     else:
         raise NameError("Errore!!!")
 
-# #сheck status of programs.feature..........
-# @when("user check Incourse of program")
-# def step_impl(context):

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68de7c45-aa88-436c-bba7-78e8e546beef" name="Default Changelist" comment="" />
+    <list default="true" id="68de7c45-aa88-436c-bba7-78e8e546beef" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/Check status of programs.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/homePage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/lateralBlock.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/lateralBlock.feature" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +202,7 @@
       <workItem from="1570549582358" duration="1685000" />
       <workItem from="1570551301111" duration="145000" />
       <workItem from="1570551466172" duration="390000" />
-      <workItem from="1570629591490" duration="326000" />
+      <workItem from="1570629591490" duration="5976000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1568995380565</created>

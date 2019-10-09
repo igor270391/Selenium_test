@@ -28,4 +28,4 @@ Feature: Login feature
     When user enters a username "i.senkiv"
     And user enters a password "Totara_2019"
     And click Login button
-    Then navigate to menu dropdown end click esc
+    Then navigate to menu dropdown end click esci
