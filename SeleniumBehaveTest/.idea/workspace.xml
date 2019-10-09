@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68de7c45-aa88-436c-bba7-78e8e546beef" name="Default Changelist" comment="commit">
-      <change afterPath="$PROJECT_DIR$/features/Check status of programs.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/lateralBlock.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/lateralBlock.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/login.feature" afterDir="false" />
-    </list>
+    <list default="true" id="68de7c45-aa88-436c-bba7-78e8e546beef" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +17,9 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -36,7 +33,10 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ToolWindowPython Console.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/bin" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -57,7 +57,37 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Behave.Check status of programs.feature:Enter scenario name here">
+  <component name="RunManager" selected="Behave.login.feature:user execute logs out from portal erikson">
+    <configuration name="Check status of programs.feature:Check Incourse program" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
+      <module name="SeleniumBehaveTest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/Check status of programs.feature" />
+      <SCENRAIO_NAMES SCENRAIO_NAMES="Check Incourse program" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Check status of programs.feature:Check incourse program" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
+      <module name="SeleniumBehaveTest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/Check status of programs.feature" />
+      <SCENRAIO_NAMES SCENRAIO_NAMES="Check incourse program" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Check status of programs.feature:Enter scenario name here" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
       <module name="SeleniumBehaveTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,20 +100,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/Check status of programs.feature" />
       <SCENRAIO_NAMES SCENRAIO_NAMES="Enter scenario name here" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="login.feature" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
-      <module name="SeleniumBehaveTest" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/login.feature" />
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
@@ -117,40 +133,18 @@
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main_steps" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="SeleniumBehaveTest" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/features/steps" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/features/steps/main_steps.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Behave.Check status of programs.feature:Enter scenario name here" />
         <item itemvalue="Behave.login.feature:user execute logs out from portal erikson" />
-        <item itemvalue="Python.main_steps" />
-        <item itemvalue="Behave.login.feature" />
         <item itemvalue="Behave.login.feature:user changes the language in &quot;English (en)&quot;" />
+        <item itemvalue="Behave.Check status of programs.feature:Check Incourse program" />
+        <item itemvalue="Behave.Check status of programs.feature:Check incourse program" />
+        <item itemvalue="Behave.Check status of programs.feature:Enter scenario name here" />
       </list>
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\IgorSenkiv\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -188,7 +182,23 @@
       <workItem from="1570006782338" duration="7679000" />
       <workItem from="1570023129235" duration="4938000" />
       <workItem from="1570115209733" duration="4169000" />
-      <workItem from="1570192194764" duration="7331000" />
+      <workItem from="1570192194764" duration="7535000" />
+      <workItem from="1570456934455" duration="127000" />
+      <workItem from="1570457169981" duration="5728000" />
+      <workItem from="1570545206974" duration="2000" />
+      <workItem from="1570545496091" duration="1024000" />
+      <workItem from="1570546601653" duration="100000" />
+      <workItem from="1570546720196" duration="139000" />
+      <workItem from="1570546989130" duration="70000" />
+      <workItem from="1570547377457" duration="75000" />
+      <workItem from="1570547471974" duration="16000" />
+      <workItem from="1570547509944" duration="20000" />
+      <workItem from="1570547592615" duration="40000" />
+      <workItem from="1570549141632" duration="415000" />
+      <workItem from="1570549582358" duration="1685000" />
+      <workItem from="1570551301111" duration="145000" />
+      <workItem from="1570551466172" duration="390000" />
+      <workItem from="1570629591490" duration="326000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1568995380565</created>
@@ -197,11 +207,49 @@
       <option name="project" value="LOCAL" />
       <updated>1568995380566</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit">
+      <created>1570549173662</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570549173663</updated>
+    </task>
+    <task id="LOCAL-00003" summary="commit">
+      <created>1570550456994</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570550456994</updated>
+    </task>
+    <task id="LOCAL-00004" summary="commit">
+      <created>1570629616275</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570629616275</updated>
+    </task>
+    <task id="LOCAL-00005" summary="commit">
+      <created>1570629735001</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570629735001</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -232,8 +280,10 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_user_changes_the_language_in__English__en__.coverage" NAME="login.feature:user changes the language in &quot;English (en)&quot; Coverage Results" MODIFIED="1569852072475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_user_execute_logs_out_from_portal_erikson.coverage" NAME="login.feature:user execute logs out from portal erikson Coverage Results" MODIFIED="1570028003260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$Check_status_of_programs_feature_Check_incourse_program.coverage" NAME="Check status of programs.feature:Check incourse program Coverage Results" MODIFIED="1570463121725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_user_changes_the_language_in__English__en__.coverage" NAME="login.feature:user changes the language in &quot;English (en)&quot; Coverage Results" MODIFIED="1570551511470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_user_execute_logs_out_from_portal_erikson.coverage" NAME="login.feature:user execute logs out from portal erikson Coverage Results" MODIFIED="1570551601664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$Check_status_of_programs_feature_Check_Incourse_program.coverage" NAME="Check status of programs.feature:Check Incourse program Coverage Results" MODIFIED="1570464770019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$environment.coverage" NAME="environment Coverage Results" MODIFIED="1568622357274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_nvalid_username_and_valid_password_on_log_in.coverage" NAME="login.feature:the user enters nvalid username and valid password on log in Coverage Results" MODIFIED="1568647293534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login.coverage" NAME="login Coverage Results" MODIFIED="1568390700941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />

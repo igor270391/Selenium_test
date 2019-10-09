@@ -2,7 +2,7 @@
 Feature: Check status of program
   Chose the nessecery button to filtered course
 
-  Scenario: Enter scenario name here
+  Scenario: Check Incourse program
     Given set up url address "login/index.php" and execute log in
-    When user clicks on the chosen filter
+    When user clicks on
 #    Then should be remain only the list of corses reffered to selected filter

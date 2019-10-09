@@ -163,41 +163,6 @@ def step_impl(context):
     else:
         raise NameError("Errore!!!")
 
-#сheck status of programs.feature..........
-@when("user clicks on the chosen filter")
-def step_impl(context):
-    filter_not_started = context.browser.find_element_by_xpath("//label[@class='btn btn-secondary btn-notstarted']")
-    filter_incourse = context.browser.find_element_by_xpath("//label[@class='btn btn-secondary btn-incourse']")
-    filter_completed = context.browser.find_element_by_xpath("//label[@class='btn btn-secondary btn-completed']")
-    xpath_container_filter = "//div[@class='mtfilter_prg container-fluid text-right']/label"
-    container_filter = context.browser.find_element_by_xpath(xpath_container_filter)
-    label_filter = container_filter.get_attribute('class')
-    time.sleep(2)
-    if label_filter == 'btn btn-secondary btn-incourse' and label_filter == 'btn btn-secondary btn-completed':
-        filter_incourse.click()
-        time.sleep(2)
-    else:
-        raise NameError("Errore!!!")
-        # filter_completed.click()
-        # time.sleep(2)
-        # print("Are displayed only not started courses")
-        # if label_filter == 'btn btn-secondary btn-notstarted' and label_filter == 'btn btn-secondary btn-completed':
-        #     time.sleep(2)
-        #     filter_not_started.click()
-        #     time.sleep(2)
-        #     filter_completed.click()
-        #     time.sleep(2)
-        #     print("Are displayed only incourse courses")
-        #     if label_filter == 'btn btn-secondary btn-notstarted' and label_filter == 'btn btn-secondary btn-incourse':
-        #         time.sleep(2)
-        #         filter_not_started.click()
-        #         time.sleep(2)
-        #         filter_incourse.click()
-        #         time.sleep(2)
-        #         print("Are displayed only completed courses")
-    # else:
-    #     raise NameError("Errore!!!")
-
-
-# @then("should be remain only the list of corses reffered to selected filter")
+# #сheck status of programs.feature..........
+# @when("user check Incourse of program")
 # def step_impl(context):
