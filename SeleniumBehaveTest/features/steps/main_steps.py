@@ -82,7 +82,7 @@ def step_impl(context, expected_result):
         assert print(expected_result)
 
 
-# lateralBlock.feature___________________________________________________________________________________________________
+# lateralBlock.feature__________________________________________________________________________________________________
 # /login in one step----------------------------------------------------------------------------------------------------
 @given('set up url address "{text}" and execute log in')
 def step_impl(context, text):
@@ -100,7 +100,7 @@ def step_impl(context, text):
     xpath_password_field = "//*[@id='password']"
     context.browser.find_element_by_xpath(xpath_password_field).send_keys(password)
     xpath_login_button = "//*[@id='loginbtn']"
-    context.browser.find_element_by_xpath(xpath_login_button).click()
+    context.browser.find_element_by_xpath(xpath_login_button).submit()
     time.sleep(3)
 
 
@@ -163,3 +163,107 @@ def step_impl(context):
     else:
         raise NameError("Errore!!!")
 
+
+#topNavigationBar.feature
+#-----------Dashboard--------------
+@when('user navigates on top navigation bar and click on the "{element}"')
+def step_impl(context, element):
+    linkText = context.browser.find_element_by_link_text("Dashboard")
+    time.sleep(1)
+    linkText.click()
+
+@then('Should be back on my dashboard "{my_dashboard}"')
+def step_impl(context, my_dashboard):
+    xpath_titlePage = "//*[contains(text(), 'et.erickson.it: Expert Teacher')]"
+    titlePage = context.browser.find_element_by_xpath(xpath_titlePage).text
+    time.sleep(2)
+    assert titlePage == my_dashboard
+    time.sleep(2)
+
+@when("user clicks on the Expet Teacher logos on the upper left portion")
+def step_impl(context):
+    xpath_logo = "//*[@class='masthead_logo--header_img img-responsive']"
+    logo = context.browser.find_element_by_xpath(xpath_logo).click()
+    time.sleep(1)
+
+#
+#
+# @then('after click on should be returned "SHELL ET" on the new card of browser')
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     raise NotImplementedError(u'STEP: Then after click on should be returned "SHELL ET" on the new card of browser')
+#
+#
+# @then('after click on should be returned "Curriculum Formativo: Tutte Le Palestre"')
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     raise NotImplementedError(u'STEP: Then after click on should be returned "Curriculum Formativo: Tutte Le Palestre"')
+#
+#
+# @when('user navigates on top navigation bar and click on the item an anvelop "Menu messaggi"')
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     raise NotImplementedError(
+#         u'STEP: When user navigates on top navigation bar and click on the item an anvelop "Menu messaggi"')
+#
+#
+# @step("clicks again on the item an envelope")
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     raise NotImplementedError(u'STEP: And clicks again on the item an envelope')
+#
+#
+# @then('"menu messaggi" should be closed')
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     raise NotImplementedError(u'STEP: Then "menu messaggi" should be closed')
+#
+#
+# @when('user navigates on top navigation bar and click on the item bell "Notifiche"')
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     raise NotImplementedError(u'STEP: When user navigates on top navigation bar and click on the item bell "Notifiche"')
+#
+#
+# @step("clicks again on the item bell")
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     raise NotImplementedError(u'STEP: And clicks again on the item bell')
+#
+#
+# @when("user navigates on top navigation bar and click on the user's own name")
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     raise NotImplementedError(u'STEP: When user navigates on top navigation bar and click on the user\'s own name')
+#
+#
+# @step("clicks again on the user's own name")
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     raise NotImplementedError(u'STEP: And clicks again on the user\'s own name')
+#
+#
+# @then('user\'s menu profile "menu-content" should be closed')
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     raise NotImplementedError(u'STEP: Then user\'s menu profile "menu-content" should be closed')
