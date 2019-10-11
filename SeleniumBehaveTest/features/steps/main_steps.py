@@ -9,6 +9,18 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
 
+def wait_for_xpath_element(context, time_sec, xpath_element):
+    time.sleep(0.5)
+    i = 0
+    status = False
+    while i <= time_sec and status != True:
+        try:
+            context.browser.find_element_by_xpath(xpath_element)
+            status = True
+        except:
+            pass
+        time.sleep(1)
+        i += 1
 
 # Login feature
 @given('url address "{text}"')
@@ -166,28 +178,36 @@ def step_impl(context):
 
 #topNavigationBar.feature
 #-----------Dashboard--------------
-@when('user navigates on top navigation bar and click on the "{element}"')
-def step_impl(context, element):
+@when('user navigates on top navigation bar and click on the Dashboard')
+def step_impl(context):
     linkText = context.browser.find_element_by_link_text("Dashboard")
-    time.sleep(1)
     linkText.click()
-
-@then('Should be back on my dashboard "{my_dashboard}"')
-def step_impl(context, my_dashboard):
-    xpath_titlePage = "//*[contains(text(), 'et.erickson.it: Expert Teacher')]"
-    titlePage = context.browser.find_element_by_xpath(xpath_titlePage).text
-    time.sleep(2)
-    assert titlePage == my_dashboard
     time.sleep(2)
 
-@when("user clicks on the Expet Teacher logos on the upper left portion")
+@then('should be back on the page of my Dashboard "{element}"')
+def step_impl(context, element):
+    title = context.browser.title
+    assert element == title
+
+# -------------Logo on homePage----------------------
+@when("user clicks on the Expert Teacher logos on the upper left part")
 def step_impl(context):
     xpath_logo = "//*[@class='masthead_logo--header_img img-responsive']"
+    wait_for_xpath_element(context, 3, xpath_logo)
     logo = context.browser.find_element_by_xpath(xpath_logo).click()
-    time.sleep(1)
 
-#
-#
+#--------------Media Library-------------------------
+@when('user navigates on top navigation bar and click on the "Media Library"')
+def step_impl(context):
+    xpath_nav = "//*[@class='totaraNav_prim--list totaraNav_prim--list_hideMobile']/li/a"
+    time.sleep(2)
+    nav_list = context.browser.find_elements_by_xpath(xpath_nav)
+    for x in nav_list:
+        print(nav_list[x], x)
+        # if "Dashboard".upper() in x.text:
+        #     x.click()
+        #     time.sleep(2)
+
 # @then('after click on should be returned "SHELL ET" on the new card of browser')
 # def step_impl(context):
 #     """

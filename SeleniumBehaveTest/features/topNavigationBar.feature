@@ -3,18 +3,19 @@ Feature: Check Top Navigation bar on the home page
 
   Scenario: check if ink of the dashboard has returned Home Page
     Given set up url address "login/index.php" and execute log in
-    When user navigates on top navigation bar and click on the "Dashboard"
-    Then should be back on my dashboard "et.erickson.it: Expert Teacher"
+    When user navigates on top navigation bar and click on the Dashboard
+    Then should be back on the page of my Dashboard "et.erickson.it: Expert Teacher"
 
   Scenario: check if link of the logo has returned home page
     Given set up url address "login/index.php" and execute log in
-    When user clicks on the Expet Teacher logos on the upper left portion
-    Then should be back on my dashboard "et.erickson.it: Expert Teacher"
+    When user clicks on the Expert Teacher logos on the upper left part
+    Then should be back on the page of my Dashboard "et.erickson.it: Expert Teacher"
+
 #
-#  Scenario: check if link of the Media Library has returned  Shell ET - Media library integrata on the new card
-#  of the browser
-#    Given set up url address "login/index.php" and execute log in
-#    When user navigates on top navigation bar and click on the "Media Library"
+  Scenario: check if link of the Media Library has returned Shell ET - Media library integrata on the new card
+  of the browser
+    Given set up url address "login/index.php" and execute log in
+    When user navigates on top navigation bar and click on the "Media Library"
 #    Then after click on should be returned "SHELL ET" on the new card of browser
 #
 #   Scenario: check if link of the Curriculum Formativo is accessible
