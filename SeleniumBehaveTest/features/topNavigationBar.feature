@@ -11,17 +11,16 @@ Feature: Check Top Navigation bar on the home page
     When user clicks on the Expert Teacher logos on the upper left part
     Then should be back on the page of my Dashboard "et.erickson.it: Expert Teacher"
 
-#
-  Scenario: check if link of the Media Library has returned Shell ET - Media library integrata on the new card
-  of the browser
+  Scenario: check if link of the Media Library is accessible and has returned Shell ET - Media library integrata
+  on the new card of the browser
     Given set up url address "login/index.php" and execute log in
-    When user navigates on top navigation bar and click on the "Media Library"
-#    Then after click on should be returned "SHELL ET" on the new card of browser
-#
-#   Scenario: check if link of the Curriculum Formativo is accessible
-#  and has returned Curriculum Formativo: Tutte Le Palestre
-#    Given set up url address "login/index.php" and execute log in
-#    When user navigates on top navigation bar and click on the "Curriculum Formativo"
+    When user navigates on top navigation bar and clicks on the "Media Library"
+    Then should be return the title of the page "SHELL ET" that is opened
+
+  Scenario: check if link of the Curriculum Formativo is accessible and has returned Curriculum
+  Formativo: Tutte Le Palestre
+    Given set up url address "login/index.php" and execute log in
+    When user navigates on the top navigation bar and clicks on the "Curriculum Formativo"
 #    Then after click on should be returned "Curriculum Formativo: Tutte Le Palestre"
 #
 #  Scenario: check if the message menu is accessible

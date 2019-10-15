@@ -184,11 +184,6 @@ def step_impl(context):
     linkText.click()
     time.sleep(2)
 
-@then('should be back on the page of my Dashboard "{element}"')
-def step_impl(context, element):
-    title = context.browser.title
-    assert element == title
-
 # -------------Logo on homePage----------------------
 @when("user clicks on the Expert Teacher logos on the upper left part")
 def step_impl(context):
@@ -196,34 +191,43 @@ def step_impl(context):
     wait_for_xpath_element(context, 3, xpath_logo)
     logo = context.browser.find_element_by_xpath(xpath_logo).click()
 
-#--------------Media Library-------------------------
-@when('user navigates on top navigation bar and click on the "Media Library"')
-def step_impl(context):
-    xpath_nav = "//*[@class='totaraNav_prim--list totaraNav_prim--list_hideMobile']/li/a"
-    time.sleep(2)
-    nav_list = context.browser.find_elements_by_xpath(xpath_nav)
-    for x in nav_list:
-        print(nav_list[x], x)
-        # if "Dashboard".upper() in x.text:
-        #     x.click()
-        #     time.sleep(2)
+@then('should be back on the page of my Dashboard "{element}"')
+def step_impl(context, element):
+    title = context.browser.title
+    assert element == title
 
-# @then('after click on should be returned "SHELL ET" on the new card of browser')
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     raise NotImplementedError(u'STEP: Then after click on should be returned "SHELL ET" on the new card of browser')
-#
-#
-# @then('after click on should be returned "Curriculum Formativo: Tutte Le Palestre"')
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     raise NotImplementedError(u'STEP: Then after click on should be returned "Curriculum Formativo: Tutte Le Palestre"')
-#
-#
+
+#------------TAB Media Library-------------------------
+@when('user navigates on top navigation bar and clicks on the "Media Library"')
+def step_impl(context):
+    xpath_nav = "//ul/li[3]/a[@class='totaraNav_prim--list_item_link']"
+    wait_for_xpath_element(context, 5, xpath_nav)
+    nav_list = context.browser.find_element_by_xpath(xpath_nav)
+    #open TAB in new windows
+    nav_list.send_keys(Keys.CONTROL + Keys.ENTER)
+    #focus on the new TAB that is opened
+    context.browser.switch_to_window(context.browser.window_handles[1])
+    time.sleep(2)
+    #came back on the main page
+    # context.browser.switch_to_window(context.browser.window_handles[0])
+    # time.sleep(2)
+
+@then('should be return the title of the page "{element}" that is opened')
+def step_impl(context, element):
+    title = context.browser.title
+    assert element == title
+    time.sleep(1)
+
+
+#--------------------CURRICULUM FORMATIVO----------------------------------
+@when('user navigates on the top navigation bar and clicks on the "Curriculum Formativo"')
+def step_impl(context):
+
+
+
+
+
+
 # @when('user navigates on top navigation bar and click on the item an anvelop "Menu messaggi"')
 # def step_impl(context):
 #     """
