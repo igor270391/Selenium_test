@@ -15,28 +15,21 @@ Feature: Check Top Navigation bar on the home page
   on the new card of the browser
     Given set up url address "login/index.php" and execute log in
     When user navigates on top navigation bar and clicks on the "Media Library"
-    Then should be return the title of the page "SHELL ET" that is opened
+    Then should be return the title of the page "SHELL ET"
 
   Scenario: check if link of the Curriculum Formativo is accessible and has returned Curriculum
   Formativo: Tutte Le Palestre
     Given set up url address "login/index.php" and execute log in
     When user navigates on the top navigation bar and clicks on the "Curriculum Formativo"
-#    Then after click on should be returned "Curriculum Formativo: Tutte Le Palestre"
-#
-#  Scenario: check if the message menu is accessible
-#    Given set up url address "login/index.php" and execute log in
-#    When user navigates on top navigation bar and click on the item an anvelop "Menu messaggi"
-#    And clicks again on the item an envelope
-#    Then "menu messaggi" should be closed
-#
+    Then should be return the title of the page "Curriculum formativo"
+
+  Scenario: check if the message menu is accessible
+    Given set up url address "login/index.php" and execute log in
+    When user clicks on "an envelope item" that open and close "Menu messaggi"
+    Then message menu should be closed
+
 #  Scenario: check if the notification menu is accessible
 #    Given set up url address "login/index.php" and execute log in
 #    When user navigates on top navigation bar and click on the item bell "Notifiche"
 #    And clicks again on the item bell
 #    Then "menu notifiche" should be closed
-#
-#  Scenario: check if the user's profile menu is accessible
-#    Given set up url address "login/index.php" and execute log in
-#    When user navigates on top navigation bar and click on the user's own name
-#    And clicks again on the user's own name
-#    Then user's menu profile "menu-content" should be closed

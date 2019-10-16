@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68de7c45-aa88-436c-bba7-78e8e546beef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/features/steps/main_steps.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/features/topNavigationBar.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/Check status of programs.feature" beforeDir="false" />
@@ -41,7 +42,7 @@
     <property name="ToolWindowPython Console.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -62,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Behave.topNavigationBar.feature:check if link of the Media Library is accessible and has returned Shell ET - Media library integrata">
+  <component name="RunManager" selected="Behave.topNavigationBar.feature:check if the message menu is accessible">
     <configuration name="topNavigationBar.feature:check if ink of the dashboard has returned Home Page" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
       <module name="SeleniumBehaveTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -75,6 +76,21 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/topNavigationBar.feature" />
       <SCENRAIO_NAMES SCENRAIO_NAMES="check if ink of the dashboard has returned Home Page" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="topNavigationBar.feature:check if link of the Curriculum Formativo is accessible and has returned Curriculum" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
+      <module name="SeleniumBehaveTest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/topNavigationBar.feature" />
+      <SCENRAIO_NAMES SCENRAIO_NAMES="check if link of the Curriculum Formativo is accessible and has returned Curriculum" />
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
@@ -108,7 +124,7 @@
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="topNavigationBar.feature:check if link of the logo has returned home page" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
+    <configuration name="topNavigationBar.feature:check if the message menu is accessible" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
       <module name="SeleniumBehaveTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -119,39 +135,17 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/topNavigationBar.feature" />
-      <SCENRAIO_NAMES SCENRAIO_NAMES="check if link of the logo has returned home page" />
+      <SCENRAIO_NAMES SCENRAIO_NAMES="check if the message menu is accessible" />
       <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main_steps" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="SeleniumBehaveTest" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/features/steps" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/features/steps/main_steps.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Behave.topNavigationBar.feature:check if the message menu is accessible" />
+        <item itemvalue="Behave.topNavigationBar.feature:check if link of the Curriculum Formativo is accessible and has returned Curriculum" />
         <item itemvalue="Behave.topNavigationBar.feature:check if link of the Media Library is accessible and has returned Shell ET - Media library integrata" />
         <item itemvalue="Behave.topNavigationBar.feature:check if link of the Media Library has returned Shell ET - Media library integrata on the new card" />
         <item itemvalue="Behave.topNavigationBar.feature:check if ink of the dashboard has returned Home Page" />
-        <item itemvalue="Behave.topNavigationBar.feature:check if link of the logo has returned home page" />
-        <item itemvalue="Python.main_steps" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +209,8 @@
       <workItem from="1570778829235" duration="17083000" />
       <workItem from="1571041380627" duration="8314000" />
       <workItem from="1571051773641" duration="1832000" />
-      <workItem from="1571136311848" duration="1268000" />
+      <workItem from="1571136311848" duration="5727000" />
+      <workItem from="1571210403755" duration="9526000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1568995380565</created>
@@ -310,8 +305,10 @@
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_invalid_username_and_invalid_password_on_log_in.coverage" NAME="login.feature:the user enters invalid username and invalid password on log in Coverage Results" MODIFIED="1569852041068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_sidebar_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes sidebar for view home page in full screen Coverage Results" MODIFIED="1570712710497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_valid_username_and_valid_password_on_log_in.coverage" NAME="login.feature:the user enters valid username and valid password on log in Coverage Results" MODIFIED="1570720318603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_the_message_menu_is_accessible.coverage" NAME="topNavigationBar.feature:check if the message menu is accessible Coverage Results" MODIFIED="1571225230171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_lateral_menu_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes lateral menu for view home page in full screen Coverage Results" MODIFIED="1569598586561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_ink_of_the_dashboard_has_returned_Home_Page.coverage" NAME="topNavigationBar.feature:check if ink of the dashboard has returned Home Page Coverage Results" MODIFIED="1570810066432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_link_of_the_Curriculum_Formativo_is_accessible_and_has_returned_Curriculum.coverage" NAME="topNavigationBar.feature:check if link of the Curriculum Formativo is accessible and has returned Curriculum Coverage Results" MODIFIED="1571144203323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_login_in_one_step.coverage" NAME="lateralBlock.feature:login in one step Coverage Results" MODIFIED="1568991480863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature.coverage" NAME="login.feature Coverage Results" MODIFIED="1569922624165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$Check_status_of_programs_feature_Enter_scenario_name_here.coverage" NAME="Check status of programs.feature:Enter scenario name here Coverage Results" MODIFIED="1570199577181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />

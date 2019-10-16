@@ -212,82 +212,40 @@ def step_impl(context):
     # context.browser.switch_to_window(context.browser.window_handles[0])
     # time.sleep(2)
 
-@then('should be return the title of the page "{element}" that is opened')
+@then('should be return the title of the page "{element}"')
 def step_impl(context, element):
     title = context.browser.title
     assert element == title
     time.sleep(1)
 
-
 #--------------------CURRICULUM FORMATIVO----------------------------------
 @when('user navigates on the top navigation bar and clicks on the "Curriculum Formativo"')
 def step_impl(context):
+    xpath_curriculum = "//ul/li[4]/a[@class='totaraNav_prim--list_item_link']"
+    wait_for_xpath_element(context, 2, xpath_curriculum)
+    curriculum = context.browser.find_element_by_xpath(xpath_curriculum)
+    curriculum.click()
+    time.sleep(2)
 
+# ------------------MESSAGGE------------------------------------------------
+@when('user clicks on "an envelope item" that open and close "Menu messaggi"')
+def step_impl(context):
+    xpath_message = "//*[@id='nav-message-popover-container']/div[@role='button']"
+    wait_for_xpath_element(context, 2, xpath_message)
+    menu_message = context.browser.find_element_by_xpath(xpath_message)
+    menu_message.click()
+    time.sleep(2)
+    getText = menu_message.get_attribute('aria-label')
+    if getText == "Nascondi finestra dei messaggi":
+        context.browser.execute_script("arguments[0].click();", menu_message)
+        time.sleep(3)
+    else:
+        print("Menu message is opened!")
 
-
-
-
-
-# @when('user navigates on top navigation bar and click on the item an anvelop "Menu messaggi"')
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     raise NotImplementedError(
-#         u'STEP: When user navigates on top navigation bar and click on the item an anvelop "Menu messaggi"')
-#
-#
-# @step("clicks again on the item an envelope")
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     raise NotImplementedError(u'STEP: And clicks again on the item an envelope')
-#
-#
-# @then('"menu messaggi" should be closed')
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     raise NotImplementedError(u'STEP: Then "menu messaggi" should be closed')
-#
-#
-# @when('user navigates on top navigation bar and click on the item bell "Notifiche"')
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     raise NotImplementedError(u'STEP: When user navigates on top navigation bar and click on the item bell "Notifiche"')
-#
-#
-# @step("clicks again on the item bell")
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     raise NotImplementedError(u'STEP: And clicks again on the item bell')
-#
-#
-# @when("user navigates on top navigation bar and click on the user's own name")
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     raise NotImplementedError(u'STEP: When user navigates on top navigation bar and click on the user\'s own name')
-#
-#
-# @step("clicks again on the user's own name")
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     raise NotImplementedError(u'STEP: And clicks again on the user\'s own name')
-#
-#
-# @then('user\'s menu profile "menu-content" should be closed')
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     raise NotImplementedError(u'STEP: Then user\'s menu profile "menu-content" should be closed')
+@then("message menu should be closed")
+def step_impl(context):
+    xpath_menu_expanded = "//*[@class='popover-region-container']"
+    wait_for_xpath_element(context, 1, xpath_menu_expanded)
+    menu_expanded = context.browser.find_element_by_xpath(xpath_menu_expanded)
+    check_menu_expanded = menu_expanded.get_attribute('aria-expanded')
+    assert check_menu_expanded == "false"
