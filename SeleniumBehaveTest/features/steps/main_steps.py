@@ -33,25 +33,21 @@ def step_impl(context, text):
     context.browser.get('https://{}/'.format(url) + text)
     time.sleep(2)
 
-
 @when('user enters a username "{user_name}"')
 def step_impl(context, user_name):
     xpath_username_field = "//*[@id='username']"
     context.browser.find_element_by_xpath(xpath_username_field).send_keys(user_name)
-
 
 @step('user enters a password "{password}"')
 def step_impl(context, password):
     xpath_password_field = "//*[@id='password']"
     context.browser.find_element_by_xpath(xpath_password_field).send_keys(password)
 
-
 @step("click Login button")
 def step_impl(context):
     xpath_login_button = "//*[@id='loginbtn']"
     context.browser.find_element_by_xpath(xpath_login_button).click()
     time.sleep(3)
-
 
 @then('I should have a title "{title_test}"')
 def step_impl(context, title_test):
@@ -71,19 +67,16 @@ def step_impl(context, expected_errore_message):
     time.sleep(3)
     assert actual_result == expected_errore_message
 
-
 @when("user navigate to drop down language menu")
 def step_impl(context):
     xpath_menu_language_dropdown = "//*[@class='custom-select langmenu']"
     dropdown_language_menu = context.browser.find_element_by_xpath(xpath_menu_language_dropdown).click()
-
 
 @step("select English (en) language")
 def step_impl(context):
     xpath_english_language = "//option[@value='en']"
     time.sleep(2)
     context.browser.find_element_by_xpath(xpath_english_language).click()
-
 
 @then('User should has the page log-in in "{expected_result}" language')
 def step_impl(context, expected_result):
@@ -131,7 +124,6 @@ def step_impl(context):
     else:
         raise NameError('close sidebar action is not executed')
 
-
 @step("scroll down the right sidebar")
 def step_impl(context):
     xpth_target = "//h2[contains(text(),'I miei nuovi badge')]"
@@ -139,14 +131,12 @@ def step_impl(context):
     context.browser.execute_script('arguments[0].scrollIntoView(true);', target)
     time.sleep(2)
 
-
 @step("scroll down the content of the page")
 def step_impl(context):
     xpath_footer = "//footer[@id='page-footer']"
     target_footer = context.browser.find_element_by_xpath(xpath_footer)
     context.browser.execute_script('arguments[0].scrollIntoView(true);', target_footer)
     time.sleep(2)
-
 
 @then("the sidebar and content of the page should be scrolled")
 def step_impl(context):
@@ -240,7 +230,7 @@ def step_impl(context):
         context.browser.execute_script("arguments[0].click();", menu_message)
         time.sleep(3)
     else:
-        print("Menu message is opened!")
+        print("Menu message left open!")
 
 @then("message menu should be closed")
 def step_impl(context):
@@ -249,3 +239,45 @@ def step_impl(context):
     menu_expanded = context.browser.find_element_by_xpath(xpath_menu_expanded)
     check_menu_expanded = menu_expanded.get_attribute('aria-expanded')
     assert check_menu_expanded == "false"
+
+# ------------------NOTIFICHE------------------------------------------------
+@when('user navigates on top navigation bar click on the bell item that open and close notification menu')
+def step_impl(context):
+    xpath_notification = "//*[@class='totaraNav_prim--side']/div[4]/div"
+    wait_for_xpath_element(context, 1, xpath_notification)
+    notification_menu = context.browser.find_element_by_xpath(xpath_notification)
+    notification_menu.click()
+    time.sleep(2)
+    getText = notification_menu.get_attribute('aria-label')
+    if getText == "Nascondi finestra delle notifiche":
+        context.browser.execute_script("arguments[0].click();", notification_menu)
+        time.sleep(3)
+    else:
+        print("Menu message left open!")
+
+@then('"menu notifiche" should be closed')
+def step_impl(context):
+    xpath_menu_expanded = "//*[@class='totaraNav_prim--side']/div[4]/div[2]"
+    wait_for_xpath_element(context, 1, xpath_menu_expanded)
+    menu_expanded = context.browser.find_element_by_xpath(xpath_menu_expanded)
+    check_menu_expanded = menu_expanded.get_attribute('aria-expanded')
+    assert check_menu_expanded == "false"
+
+# ------------------User MENU------------------------------------------------
+@when("user navigates on top navigation bar click on the user text name that open user's menu")
+def step_impl(context):
+    xpath_user_action_menu = "//*[@id='action-menu-0']/ul/li/a/span[@class='userbutton']"
+    user_menu = context.browser.find_element_by_xpath(xpath_user_action_menu)
+    user_menu.click()
+    time.sleep(0.5)
+
+@then('"user\'s menu" should open')
+def step_impl(context):
+    xpath_usermenu_open = "//*[@class='usermenu']/div"
+    wait_for_xpath_element(context, 2, xpath_usermenu_open)
+    users_menu = context.browser.find_element_by_xpath(xpath_usermenu_open)
+    time.sleep(1)
+    get_text = users_menu.get_attribute('class')
+    if get_text == "moodle-actionmenu nowrap-items show":
+        assert print("User\'s menu is opened!!!!!!!!!!!")
+    time.sleep(1)

@@ -23,13 +23,17 @@ Feature: Check Top Navigation bar on the home page
     When user navigates on the top navigation bar and clicks on the "Curriculum Formativo"
     Then should be return the title of the page "Curriculum formativo"
 
-  Scenario: check if the message menu is accessible
+  Scenario: check if the user'smessage menu is accessible
     Given set up url address "login/index.php" and execute log in
     When user clicks on "an envelope item" that open and close "Menu messaggi"
     Then message menu should be closed
 
-#  Scenario: check if the notification menu is accessible
-#    Given set up url address "login/index.php" and execute log in
-#    When user navigates on top navigation bar and click on the item bell "Notifiche"
-#    And clicks again on the item bell
-#    Then "menu notifiche" should be closed
+  Scenario: check if the user's notification menu is accessible
+    Given set up url address "login/index.php" and execute log in
+    When user navigates on top navigation bar click on the bell item that open and close notification menu
+    Then "menu notifiche" should be closed
+
+  Scenario: check if appear user's menu when click on the user text name
+    Given set up url address "login/index.php" and execute log in
+    When user navigates on top navigation bar click on the user text name that open user's menu
+    Then "user's menu" should open
