@@ -63,7 +63,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main_steps">
+  <component name="RunManager" selected="Behave.lateralBlock.feature:user closes sidebar for view home page in full screen">
+    <configuration name="lateralBlock.feature:user closes sidebar for view home page in full screen" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
+      <module name="SeleniumBehaveTest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/lateralBlock.feature" />
+      <SCENRAIO_NAMES SCENRAIO_NAMES="user closes sidebar for view home page in full screen" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="topNavigationBar.feature:check if appear user's menu when click on the user text name" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
       <module name="SeleniumBehaveTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,36 +94,6 @@
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="topNavigationBar.feature:check if the message menu is accessible" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
-      <module name="SeleniumBehaveTest" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/topNavigationBar.feature" />
-      <SCENRAIO_NAMES SCENRAIO_NAMES="check if the message menu is accessible" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="topNavigationBar.feature:check if the notification menu is accessible" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
-      <module name="SeleniumBehaveTest" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/topNavigationBar.feature" />
-      <SCENRAIO_NAMES SCENRAIO_NAMES="check if the notification menu is accessible" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="topNavigationBar.feature:check if the user's menu is accessible" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
       <module name="SeleniumBehaveTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,6 +106,21 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/topNavigationBar.feature" />
       <SCENRAIO_NAMES SCENRAIO_NAMES="check if the user's menu is accessible" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="topNavigationBar.feature:check if the user'smessage menu is accessible" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
+      <module name="SeleniumBehaveTest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/topNavigationBar.feature" />
+      <SCENRAIO_NAMES SCENRAIO_NAMES="check if the user'smessage menu is accessible" />
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
@@ -148,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main_steps" />
+        <item itemvalue="Behave.lateralBlock.feature:user closes sidebar for view home page in full screen" />
         <item itemvalue="Behave.topNavigationBar.feature:check if appear user's menu when click on the user text name" />
+        <item itemvalue="Behave.topNavigationBar.feature:check if the user'smessage menu is accessible" />
+        <item itemvalue="Python.main_steps" />
         <item itemvalue="Behave.topNavigationBar.feature:check if the user's menu is accessible" />
-        <item itemvalue="Behave.topNavigationBar.feature:check if the notification menu is accessible" />
-        <item itemvalue="Behave.topNavigationBar.feature:check if the message menu is accessible" />
       </list>
     </recent_temporary>
   </component>
@@ -220,6 +220,9 @@
       <workItem from="1571210403755" duration="15298000" />
       <workItem from="1571242252068" duration="265000" />
       <workItem from="1571327424999" duration="1906000" />
+      <workItem from="1571329362785" duration="125000" />
+      <workItem from="1571671396255" duration="2743000" />
+      <workItem from="1572250665069" duration="2423000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1568995380565</created>
@@ -290,20 +293,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/features/steps/main_steps.py</url>
-          <line>269</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/features/steps/main_steps.py</url>
-          <line>270</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PyBehaveRunConfigurationType">
         <watch expression="locals_" />
@@ -315,14 +304,15 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_appear_user_s_menu_when_click_on_the_user_text_name.coverage" NAME="topNavigationBar.feature:check if appear user's menu when click on the user text name Coverage Results" MODIFIED="1571328965000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_the_user_smessage_menu_is_accessible.coverage" NAME="topNavigationBar.feature:check if the user'smessage menu is accessible Coverage Results" MODIFIED="1571329426810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_appear_user_s_menu_when_click_on_the_user_text_name.coverage" NAME="topNavigationBar.feature:check if appear user's menu when click on the user text name Coverage Results" MODIFIED="1571671631821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_link_of_the_logo_has_returned_home_page.coverage" NAME="topNavigationBar.feature:check if link of the logo has returned home page Coverage Results" MODIFIED="1570803383272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$Check_status_of_programs_feature_Check_Incourse_program.coverage" NAME="Check status of programs.feature:Check Incourse program Coverage Results" MODIFIED="1570464770019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_link_of_the_Media_Library_is_accessible_and_has_returned_Shell_ET___Media_library_integrata.coverage" NAME="topNavigationBar.feature:check if link of the Media Library is accessible and has returned Shell ET - Media library integrata Coverage Results" MODIFIED="1571137585499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_nvalid_username_and_valid_password_on_log_in.coverage" NAME="login.feature:the user enters nvalid username and valid password on log in Coverage Results" MODIFIED="1568647293534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login.coverage" NAME="login Coverage Results" MODIFIED="1568390700941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_invalid_username_and_invalid_password_on_log_in.coverage" NAME="login.feature:the user enters invalid username and invalid password on log in Coverage Results" MODIFIED="1569852041068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_sidebar_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes sidebar for view home page in full screen Coverage Results" MODIFIED="1570712710497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_sidebar_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes sidebar for view home page in full screen Coverage Results" MODIFIED="1571671737797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_valid_username_and_valid_password_on_log_in.coverage" NAME="login.feature:the user enters valid username and valid password on log in Coverage Results" MODIFIED="1570720318603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_lateral_menu_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes lateral menu for view home page in full screen Coverage Results" MODIFIED="1569598586561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_ink_of_the_dashboard_has_returned_Home_Page.coverage" NAME="topNavigationBar.feature:check if ink of the dashboard has returned Home Page Coverage Results" MODIFIED="1570810066432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -334,7 +324,7 @@
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_user_execute_logs_out_from_portal_erikson.coverage" NAME="login.feature:user execute logs out from portal erikson Coverage Results" MODIFIED="1570551601664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_the_notification_menu_is_accessible.coverage" NAME="topNavigationBar.feature:check if the notification menu is accessible Coverage Results" MODIFIED="1571240003079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$environment.coverage" NAME="environment Coverage Results" MODIFIED="1568622357274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features" />
-    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$main_steps.coverage" NAME="main_steps Coverage Results" MODIFIED="1571329325428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$main_steps.coverage" NAME="main_steps Coverage Results" MODIFIED="1571329409605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_the_message_menu_is_accessible.coverage" NAME="topNavigationBar.feature:check if the message menu is accessible Coverage Results" MODIFIED="1571225230171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_link_of_the_Curriculum_Formativo_is_accessible_and_has_returned_Curriculum.coverage" NAME="topNavigationBar.feature:check if link of the Curriculum Formativo is accessible and has returned Curriculum Coverage Results" MODIFIED="1571144203323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_login_in_one_step.coverage" NAME="lateralBlock.feature:login in one step Coverage Results" MODIFIED="1568991480863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />

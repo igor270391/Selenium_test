@@ -110,7 +110,7 @@ def step_impl(context, text):
 
 
 # user closes lateral menu for view home page in full screen_______________________________________________________________-
-@step("click on the button to close and reopen the sidebar")
+@step("user clicks on the button on the right corner of the sidebar to close and reopen it")
 def step_impl(context):
     btt_xpth = "//a[@id='show-sidebar']/i"
     button = context.browser.find_element_by_xpath(btt_xpth)
@@ -278,6 +278,12 @@ def step_impl(context):
     users_menu = context.browser.find_element_by_xpath(xpath_usermenu_open)
     time.sleep(1)
     get_text = users_menu.get_attribute('class')
-    if get_text == "moodle-actionmenu nowrap-items show":
-        assert print("User\'s menu is opened!!!!!!!!!!!")
-    time.sleep(1)
+    assert get_text == "moodle-actionmenu nowrap-items show"
+
+# user profile------------------------------------------------------------------
+@when("user navigates to the right side bar")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    raise NotImplementedError(u'STEP: When user navigates to the right side bar')
