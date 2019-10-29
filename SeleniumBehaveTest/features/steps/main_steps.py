@@ -280,10 +280,43 @@ def step_impl(context):
     get_text = users_menu.get_attribute('class')
     assert get_text == "moodle-actionmenu nowrap-items show"
 
-# user profile------------------------------------------------------------------
-@when("user navigates to the right side bar")
+# user profile within the left sidebar------------------------------------------------------------------
+@when("user clicks on user's image profile on the left side bar")
 def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    raise NotImplementedError(u'STEP: When user navigates to the right side bar')
+    xpath_users_image = "//*[@class='myprofileitem picture']/a"
+    wait_for_xpath_element(context, 1, xpath_users_image)
+    users_image = context.browser.find_element_by_xpath(xpath_users_image)
+    users_image.click()
+    time.sleep(2)
+    # raise NotImplementedError(u'STEP: When user navigates to the right side bar')
+
+@step('within the section "Dettagli dell\'utente" user clicks on the button "modifica"')
+def step_impl(context):
+    xpath_btn_modified = "//*[@class='editprofile']/span/a"
+    wait_for_xpath_element(context, 2, xpath_btn_modified)
+    btn_modified = context.browser.find_element_by_xpath(xpath_btn_modified).click()
+    time.sleep(3)
+
+@then("the edit page of user's personality details data should be opened")
+def step_impl(context):
+    xpath_btn_updateprofile = "//div/input[@id='id_submitbutton']"
+    wait_for_xpath_element(context, 2, xpath_btn_updateprofile)
+    btn_updateprofile = context.browser.find_element_by_xpath(xpath_btn_updateprofile)
+    get_value = btn_updateprofile.get_attribute('value')
+    assert get_value == "Aggiornamento profilo"
+    print("The button " + get_value + " exist")
+
+# , "{cognome}", "{email}"
+@step('user insert "{nome}"')
+def step_impl(context, nome):
+    xpath_firstname = "//div[@class='felement ftext']/input"
+    wait_for_xpath_element(context, 1, xpath_firstname)
+    user_firstname = context.browser.find_element_by_xpath(xpath_firstname)
+    firstname_text = user_firstname.get_attribute('value')
+    time.sleep(2)
+    if len(firstname_text) == "":
+        user_firstname.send_keys(nome)
+    else:
+        user_firstname.clear()
+        user_firstname.send_keys(nome)
+    time.sleep(2)
