@@ -2,6 +2,7 @@ import time
 from behave import *
 from time import sleep
 from yaml import load
+import random
 import sqlite3
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
@@ -9,6 +10,11 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
 
+#function random list
+def random_name(list):
+        return random.choice(list)
+
+# function wait
 def wait_for_xpath_element(context, time_sec, xpath_element):
     time.sleep(0.5)
     i = 0
@@ -297,26 +303,33 @@ def step_impl(context):
     btn_modified = context.browser.find_element_by_xpath(xpath_btn_modified).click()
     time.sleep(3)
 
-@then("the edit page of user's personality details data should be opened")
-def step_impl(context):
-    xpath_btn_updateprofile = "//div/input[@id='id_submitbutton']"
-    wait_for_xpath_element(context, 2, xpath_btn_updateprofile)
-    btn_updateprofile = context.browser.find_element_by_xpath(xpath_btn_updateprofile)
-    get_value = btn_updateprofile.get_attribute('value')
-    assert get_value == "Aggiornamento profilo"
-    print("The button " + get_value + " exist")
-
 # , "{cognome}", "{email}"
-@step('user insert "{nome}"')
-def step_impl(context, nome):
+# @step('user insert "{nome}"')
+# def step_impl(context, nome):
+#     xpath_firstname = "//div[@class='felement ftext']/input"
+#     wait_for_xpath_element(context, 1, xpath_firstname)
+#     user_firstname = context.browser.find_element_by_xpath(xpath_firstname)
+#     firstname_text = user_firstname.get_attribute('value')
+#     time.sleep(2)
+#     if len(firstname_text) == "":
+#         user_firstname.send_keys(nome)
+#     else:
+#         user_firstname.clear()
+#         user_firstname.send_keys(nome)
+#     time.sleep(2)
+
+@step('user inserts "user\'s firstname"')
+def step_impl(context):
+    list = ['pippo', 'pappo', 'igor']
     xpath_firstname = "//div[@class='felement ftext']/input"
     wait_for_xpath_element(context, 1, xpath_firstname)
     user_firstname = context.browser.find_element_by_xpath(xpath_firstname)
     firstname_text = user_firstname.get_attribute('value')
-    time.sleep(2)
+    time.sleep(1)
     if len(firstname_text) == "":
-        user_firstname.send_keys(nome)
+        user_firstname.send_keys(random_name(list))
+        time.sleep(2)
     else:
         user_firstname.clear()
-        user_firstname.send_keys(nome)
+        user_firstname.send_keys(random_name(list))
     time.sleep(2)
