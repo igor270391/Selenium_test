@@ -320,16 +320,35 @@ def step_impl(context):
 
 @step('user inserts "user\'s firstname"')
 def step_impl(context):
-    list = ['pippo', 'pappo', 'igor']
-    xpath_firstname = "//div[@class='felement ftext']/input"
-    wait_for_xpath_element(context, 1, xpath_firstname)
-    user_firstname = context.browser.find_element_by_xpath(xpath_firstname)
-    firstname_text = user_firstname.get_attribute('value')
-    time.sleep(1)
-    if len(firstname_text) == "":
-        user_firstname.send_keys(random_name(list))
-        time.sleep(2)
-    else:
-        user_firstname.clear()
-        user_firstname.send_keys(random_name(list))
+    list = [['Andry', 'Sergio', 'igor'], ['Hamilton', 'Clarknet', 'Wenture'], ['andry@nomil.invalid', 'sergio@nomail.invalid', 'igor@nomail.invalid']]
+    # xpath_firstname = "//div[@class='felement ftext']/input"
+    # wait_for_xpath_element(context, 1, xpath_firstname)
+    # user_firstname = context.browser.find_element_by_xpath(xpath_firstname)
+    # firstname_text = user_firstname.get_attribute('value')
+    # time.sleep(1)
+    # if len(firstname_text) != "":
+    #     user_firstname.clear()
+    #     user_firstname.send_keys(random_name(list[1]))
+    #     time.sleep(1)
+
+    xpath_name = "//*[@class='fcontainer clearfix']/div/div[2]/input"
+    wait_for_xpath_element(context, 2, xpath_name)
+    name = context.browser.find_elements_by_xpath(xpath_name)
+    # field_name = name.get_attribute('id')
     time.sleep(2)
+    for key in name:
+        print(key)
+        if key.get_attribute('value') == "id_firstname":
+            key.clear()
+            key.send_keys(random_name(list[0]))
+            time.sleep(4)
+        #     # if key == "lastname":
+            #     key.clear()
+            #     key.send_keys(random_name(list[1]))
+            #     time.sleep(1)
+            #     if key == "email":
+            #         key.clear()
+            #         key.send_keys(random_name(list[2]))
+            #         time.sleep(1)
+    else:
+        print("ERROre")

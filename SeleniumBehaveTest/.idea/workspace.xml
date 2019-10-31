@@ -226,7 +226,8 @@
       <workItem from="1572250665069" duration="2423000" />
       <workItem from="1572337379411" duration="4396000" />
       <workItem from="1572347367495" duration="9246000" />
-      <workItem from="1572423656657" duration="12278000" />
+      <workItem from="1572423656657" duration="13090000" />
+      <workItem from="1572519617197" duration="5459000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1568995380565</created>
@@ -297,6 +298,40 @@
     <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/features/steps/main_steps.py</url>
+          <line>338</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/features/steps/main_steps.py</url>
+          <line>339</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/features/steps/main_steps.py</url>
+          <line>340</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/features/steps/main_steps.py</url>
+          <line>342</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/features/steps/main_steps.py</url>
+          <line>341</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/features/steps/main_steps.py</url>
+          <line>335</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PyBehaveRunConfigurationType">
         <watch expression="locals_" />
@@ -315,7 +350,7 @@
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$Check_status_of_programs_feature_Check_Incourse_program.coverage" NAME="Check status of programs.feature:Check Incourse program Coverage Results" MODIFIED="1570464770019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_link_of_the_Media_Library_is_accessible_and_has_returned_Shell_ET___Media_library_integrata.coverage" NAME="topNavigationBar.feature:check if link of the Media Library is accessible and has returned Shell ET - Media library integrata Coverage Results" MODIFIED="1571137585499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_nvalid_username_and_valid_password_on_log_in.coverage" NAME="login.feature:the user enters nvalid username and valid password on log in Coverage Results" MODIFIED="1568647293534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$user_s_profile_feature_user_modifies_personal_user_s_data_changing_user_s_name__surname_and_email.coverage" NAME="user's_profile.feature:user modifies personal user's data changing user's name, surname and email Coverage Results" MODIFIED="1572454401456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$user_s_profile_feature_user_modifies_personal_user_s_data_changing_user_s_name__surname_and_email.coverage" NAME="user's_profile.feature:user modifies personal user's data changing user's name, surname and email Coverage Results" MODIFIED="1572524920656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login.coverage" NAME="login Coverage Results" MODIFIED="1568390700941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_invalid_username_and_invalid_password_on_log_in.coverage" NAME="login.feature:the user enters invalid username and invalid password on log in Coverage Results" MODIFIED="1569852041068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_sidebar_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes sidebar for view home page in full screen Coverage Results" MODIFIED="1571671737797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
