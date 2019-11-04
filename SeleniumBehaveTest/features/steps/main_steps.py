@@ -1,4 +1,5 @@
 import time
+import names  #(names.get_firstname)
 from behave import *
 from time import sleep
 from yaml import load
@@ -12,7 +13,13 @@ from selenium.common.exceptions import TimeoutException
 
 #function random list
 def random_name(list):
-        return random.choice(list)
+    return random.choice(list)
+
+#______________________Global value___________________________
+global_name = ""
+global_lastname = ""
+global_email = ""
+
 
 # function wait
 def wait_for_xpath_element(context, time_sec, xpath_element):
@@ -27,7 +34,6 @@ def wait_for_xpath_element(context, time_sec, xpath_element):
             pass
         time.sleep(1)
         i += 1
-
 # Login feature
 @given('url address "{text}"')
 def step_impl(context, text):
@@ -303,52 +309,41 @@ def step_impl(context):
     btn_modified = context.browser.find_element_by_xpath(xpath_btn_modified).click()
     time.sleep(3)
 
-# , "{cognome}", "{email}"
-# @step('user insert "{nome}"')
-# def step_impl(context, nome):
-#     xpath_firstname = "//div[@class='felement ftext']/input"
-#     wait_for_xpath_element(context, 1, xpath_firstname)
-#     user_firstname = context.browser.find_element_by_xpath(xpath_firstname)
-#     firstname_text = user_firstname.get_attribute('value')
-#     time.sleep(2)
-#     if len(firstname_text) == "":
-#         user_firstname.send_keys(nome)
-#     else:
-#         user_firstname.clear()
-#         user_firstname.send_keys(nome)
-#     time.sleep(2)
 
-@step('user inserts "user\'s firstname"')
+@step('user inserts "user\'s firstname, last name, email"')
 def step_impl(context):
     list = [['Andry', 'Sergio', 'igor'], ['Hamilton', 'Clarknet', 'Wenture'], ['andry@nomil.invalid', 'sergio@nomail.invalid', 'igor@nomail.invalid']]
-    # xpath_firstname = "//div[@class='felement ftext']/input"
-    # wait_for_xpath_element(context, 1, xpath_firstname)
-    # user_firstname = context.browser.find_element_by_xpath(xpath_firstname)
-    # firstname_text = user_firstname.get_attribute('value')
-    # time.sleep(1)
-    # if len(firstname_text) != "":
-    #     user_firstname.clear()
-    #     user_firstname.send_keys(random_name(list[1]))
-    #     time.sleep(1)
-
-    xpath_name = "//*[@class='fcontainer clearfix']/div/div[2]/input"
+    xpath_name = "//*[@class='fitem required fitem_ftext  ']/div[2]/input"
     wait_for_xpath_element(context, 2, xpath_name)
     name = context.browser.find_elements_by_xpath(xpath_name)
-    # field_name = name.get_attribute('id')
-    time.sleep(2)
     for key in name:
-        print(key)
-        if key.get_attribute('value') == "id_firstname":
+        if key.get_attribute('id') == "id_firstname":
             key.clear()
-            key.send_keys(random_name(list[0]))
-            time.sleep(4)
-        #     # if key == "lastname":
-            #     key.clear()
-            #     key.send_keys(random_name(list[1]))
-            #     time.sleep(1)
-            #     if key == "email":
-            #         key.clear()
-            #         key.send_keys(random_name(list[2]))
-            #         time.sleep(1)
-    else:
-        print("ERROre")
+            insert_name = random_name(list[0])
+            global global_name
+            global_name = insert_name
+            key.send_keys(global_name)
+        elif key.get_attribute('id') == "id_lastname":
+            key.clear()
+            insert_lastname = random_name(list[1])
+            global global_lastname
+            global_lastname = insert_lastname
+            key.send_keys(global_lastname)
+        elif key.get_attribute('id') == "id_email":
+            key.clear()
+            insert_email = random_name(list[2])
+            global global_email
+            global_email = insert_email
+            key.send_keys(global_email)
+            time.sleep(1)
+        else:
+            print("ERROre")
+
+@step('clicks on "Aggiornamento profilo"')
+def step_impl(context):
+    context.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")    #scroll down page
+    xpath_update = "//*[@class='felement fgroup']/input[1]"
+    wait_for_xpath_element(context, 0.5, xpath_update)
+    update_userprofile = context.browser.find_element_by_xpath(xpath_update).click()
+    time.sleep(1)
+

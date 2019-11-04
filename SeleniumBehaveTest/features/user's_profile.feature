@@ -5,6 +5,6 @@ Feature: check user's profile
     Given set up url address "login/index.php" and execute log in
     When user clicks on user's image profile on the left side bar
     And within the section "Dettagli dell'utente" user clicks on the button "modifica"
-    And user inserts "user's firstname"
-#    And clicks on "Aggiornamento profilo"
+    And user inserts "user's firstname, last name, email"
+    And clicks on "Aggiornamento profilo"
 #    Then user's profile should be updated with news data, "User", "t.user@nomil.invalid"
