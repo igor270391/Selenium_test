@@ -7,4 +7,4 @@ Feature: check user's profile
     And within the section "Dettagli dell'utente" user clicks on the button "modifica"
     And user inserts "user's firstname, last name, email"
     And clicks on "Aggiornamento profilo"
-#    Then user's profile should be updated with news data, "User", "t.user@nomil.invalid"
+    Then user's firstname, surname should be changed and email adress should have link "Annulla cambio email"

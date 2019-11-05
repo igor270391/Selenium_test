@@ -312,10 +312,14 @@ def step_impl(context):
 
 @step('user inserts "user\'s firstname, last name, email"')
 def step_impl(context):
-    list = [['Andry', 'Sergio', 'igor'], ['Hamilton', 'Clarknet', 'Wenture'], ['andry@nomil.invalid', 'sergio@nomail.invalid', 'igor@nomail.invalid']]
+    list = [['Andry', 'Sergio', 'Igor'], ['Hamilton', 'Clarknet', 'Wenture'], ['andry@nomil.invalid', 'sergio@nomail.invalid', 'igor@nomail.invalid']]
     xpath_name = "//*[@class='fitem required fitem_ftext  ']/div[2]/input"
     wait_for_xpath_element(context, 2, xpath_name)
     name = context.browser.find_elements_by_xpath(xpath_name)
+    xpath = "//*[@id='fitem_id_emailpending']/div[2]/a"
+    wait_for_xpath_element(context, 1, xpath)
+    cancell_change_password = context.browser.find_element_by_xpath(xpath)
+
     for key in name:
         if key.get_attribute('id') == "id_firstname":
             key.clear()
@@ -335,9 +339,20 @@ def step_impl(context):
             global global_email
             global_email = insert_email
             key.send_keys(global_email)
-            time.sleep(1)
+        # elif cancell == "Annulla cambio email":
+        #     cancell_change_password.click()
+        #     time.sleep(2)
+        #     key.clear()
+        #     insert_email = random_name(list[2])
+        #     global_email = insert_email
+        #     key.send_keys(global_email)
         else:
-            print("ERROre")
+            context.browser.execute_script("arguments[0].click();", xpath)
+            time.sleep(4)
+            key.clear()
+            insert_email = random_name(list[2])
+            global_email = insert_email
+            key.send_keys(global_email)
 
 @step('clicks on "Aggiornamento profilo"')
 def step_impl(context):
@@ -345,5 +360,21 @@ def step_impl(context):
     xpath_update = "//*[@class='felement fgroup']/input[1]"
     wait_for_xpath_element(context, 0.5, xpath_update)
     update_userprofile = context.browser.find_element_by_xpath(xpath_update).click()
-    time.sleep(1)
+    xpath_btn_continua = "//*[@class='form-submit btn-primary']"  # button continua after approved change email adress
+    wait_for_xpath_element(context, 1, xpath_btn_continua)
+    btn_continua = context.browser.find_element_by_xpath(xpath_btn_continua)
 
+    if btn_continua.get_attribute('value') == "Continua":
+        btn_continua.click()
+    else:
+        print("i not visible on the page")
+
+@then('user\'s firstname, surname should be changed and email adress should have link "Annulla cambio email"')
+def step_impl(context):
+    expected_result = global_name + " " + global_lastname
+    print(expected_result)
+    xpath_fullname = "//*[@class='page-context-header']/div[2]/h2"
+    wait_for_xpath_element(context, 1, xpath_fullname)
+    fullname = context.browser.find_element_by_xpath(xpath_fullname).text
+    print(fullname)
+    assert expected_result == fullname
