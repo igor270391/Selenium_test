@@ -1,5 +1,5 @@
 import time
-import names  #(names.get_firstname)
+import names  # (names.get_firstname)
 from behave import *
 from time import sleep
 from yaml import load
@@ -11,11 +11,13 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
 
-#function random list
+
+# function random list
 def random_name(list):
     return random.choice(list)
 
-#______________________Global value___________________________
+
+# ______________________Global value___________________________
 global_name = ""
 global_lastname = ""
 global_email = ""
@@ -34,6 +36,8 @@ def wait_for_xpath_element(context, time_sec, xpath_element):
             pass
         time.sleep(1)
         i += 1
+
+
 # Login feature
 @given('url address "{text}"')
 def step_impl(context, text):
@@ -45,21 +49,25 @@ def step_impl(context, text):
     context.browser.get('https://{}/'.format(url) + text)
     time.sleep(2)
 
+
 @when('user enters a username "{user_name}"')
 def step_impl(context, user_name):
     xpath_username_field = "//*[@id='username']"
     context.browser.find_element_by_xpath(xpath_username_field).send_keys(user_name)
+
 
 @step('user enters a password "{password}"')
 def step_impl(context, password):
     xpath_password_field = "//*[@id='password']"
     context.browser.find_element_by_xpath(xpath_password_field).send_keys(password)
 
+
 @step("click Login button")
 def step_impl(context):
     xpath_login_button = "//*[@id='loginbtn']"
     context.browser.find_element_by_xpath(xpath_login_button).click()
     time.sleep(3)
+
 
 @then('I should have a title "{title_test}"')
 def step_impl(context, title_test):
@@ -79,16 +87,19 @@ def step_impl(context, expected_errore_message):
     time.sleep(3)
     assert actual_result == expected_errore_message
 
+
 @when("user navigate to drop down language menu")
 def step_impl(context):
     xpath_menu_language_dropdown = "//*[@class='custom-select langmenu']"
     dropdown_language_menu = context.browser.find_element_by_xpath(xpath_menu_language_dropdown).click()
+
 
 @step("select English (en) language")
 def step_impl(context):
     xpath_english_language = "//option[@value='en']"
     time.sleep(2)
     context.browser.find_element_by_xpath(xpath_english_language).click()
+
 
 @then('User should has the page log-in in "{expected_result}" language')
 def step_impl(context, expected_result):
@@ -136,6 +147,7 @@ def step_impl(context):
     else:
         raise NameError('close sidebar action is not executed')
 
+
 @step("scroll down the right sidebar")
 def step_impl(context):
     xpth_target = "//h2[contains(text(),'I miei nuovi badge')]"
@@ -143,12 +155,14 @@ def step_impl(context):
     context.browser.execute_script('arguments[0].scrollIntoView(true);', target)
     time.sleep(2)
 
+
 @step("scroll down the content of the page")
 def step_impl(context):
     xpath_footer = "//footer[@id='page-footer']"
     target_footer = context.browser.find_element_by_xpath(xpath_footer)
     context.browser.execute_script('arguments[0].scrollIntoView(true);', target_footer)
     time.sleep(2)
+
 
 @then("the sidebar and content of the page should be scrolled")
 def step_impl(context):
@@ -178,13 +192,14 @@ def step_impl(context):
         raise NameError("Errore!!!")
 
 
-#topNavigationBar.feature
-#-----------Dashboard--------------
+# topNavigationBar.feature
+# -----------Dashboard--------------
 @when('user navigates on top navigation bar and click on the Dashboard')
 def step_impl(context):
     linkText = context.browser.find_element_by_link_text("Dashboard")
     linkText.click()
     time.sleep(2)
+
 
 # -------------Logo on homePage----------------------
 @when("user clicks on the Expert Teacher logos on the upper left part")
@@ -193,26 +208,28 @@ def step_impl(context):
     wait_for_xpath_element(context, 3, xpath_logo)
     logo = context.browser.find_element_by_xpath(xpath_logo).click()
 
+
 @then('should be back on the page of my Dashboard "{element}"')
 def step_impl(context, element):
     title = context.browser.title
     assert element == title
 
 
-#------------TAB Media Library-------------------------
+# ------------TAB Media Library-------------------------
 @when('user navigates on top navigation bar and clicks on the "Media Library"')
 def step_impl(context):
     xpath_nav = "//ul/li[3]/a[@class='totaraNav_prim--list_item_link']"
     wait_for_xpath_element(context, 5, xpath_nav)
     nav_list = context.browser.find_element_by_xpath(xpath_nav)
-    #open TAB in new windows
+    # open TAB in new windows
     nav_list.send_keys(Keys.CONTROL + Keys.ENTER)
-    #focus on the new TAB that is opened
+    # focus on the new TAB that is opened
     context.browser.switch_to_window(context.browser.window_handles[1])
     time.sleep(2)
-    #came back on the main page
+    # came back on the main page
     # context.browser.switch_to_window(context.browser.window_handles[0])
     # time.sleep(2)
+
 
 @then('should be return the title of the page "{element}"')
 def step_impl(context, element):
@@ -220,7 +237,8 @@ def step_impl(context, element):
     assert element == title
     time.sleep(1)
 
-#--------------------CURRICULUM FORMATIVO----------------------------------
+
+# --------------------CURRICULUM FORMATIVO----------------------------------
 @when('user navigates on the top navigation bar and clicks on the "Curriculum Formativo"')
 def step_impl(context):
     xpath_curriculum = "//ul/li[4]/a[@class='totaraNav_prim--list_item_link']"
@@ -228,6 +246,7 @@ def step_impl(context):
     curriculum = context.browser.find_element_by_xpath(xpath_curriculum)
     curriculum.click()
     time.sleep(2)
+
 
 # ------------------MESSAGGE------------------------------------------------
 @when('user clicks on "an envelope item" that open and close "Menu messaggi"')
@@ -244,6 +263,7 @@ def step_impl(context):
     else:
         print("Menu message left open!")
 
+
 @then("message menu should be closed")
 def step_impl(context):
     xpath_menu_expanded = "//*[@class='popover-region-container']"
@@ -251,6 +271,7 @@ def step_impl(context):
     menu_expanded = context.browser.find_element_by_xpath(xpath_menu_expanded)
     check_menu_expanded = menu_expanded.get_attribute('aria-expanded')
     assert check_menu_expanded == "false"
+
 
 # ------------------NOTIFICHE------------------------------------------------
 @when('user navigates on top navigation bar click on the bell item that open and close notification menu')
@@ -267,6 +288,7 @@ def step_impl(context):
     else:
         print("Menu message left open!")
 
+
 @then('"menu notifiche" should be closed')
 def step_impl(context):
     xpath_menu_expanded = "//*[@class='totaraNav_prim--side']/div[4]/div[2]"
@@ -274,6 +296,7 @@ def step_impl(context):
     menu_expanded = context.browser.find_element_by_xpath(xpath_menu_expanded)
     check_menu_expanded = menu_expanded.get_attribute('aria-expanded')
     assert check_menu_expanded == "false"
+
 
 # ------------------User MENU------------------------------------------------
 @when("user navigates on top navigation bar click on the user text name that open user's menu")
@@ -283,6 +306,7 @@ def step_impl(context):
     user_menu.click()
     time.sleep(0.5)
 
+
 @then('"user\'s menu" should open')
 def step_impl(context):
     xpath_usermenu_open = "//*[@class='usermenu']/div"
@@ -291,6 +315,7 @@ def step_impl(context):
     time.sleep(1)
     get_text = users_menu.get_attribute('class')
     assert get_text == "moodle-actionmenu nowrap-items show"
+
 
 # user profile within the left sidebar------------------------------------------------------------------
 @when("user clicks on user's image profile on the left side bar")
@@ -302,6 +327,7 @@ def step_impl(context):
     time.sleep(2)
     # raise NotImplementedError(u'STEP: When user navigates to the right side bar')
 
+
 @step('within the section "Dettagli dell\'utente" user clicks on the button "modifica"')
 def step_impl(context):
     xpath_btn_modified = "//*[@class='editprofile']/span/a"
@@ -312,15 +338,22 @@ def step_impl(context):
 
 @step('user inserts "user\'s firstname, last name, email"')
 def step_impl(context):
-    list = [['Andry', 'Sergio', 'Igor'], ['Hamilton', 'Clarknet', 'Wenture'], ['andry@nomil.invalid', 'sergio@nomail.invalid', 'igor@nomail.invalid']]
+    list = [['Andry', 'Sergio', 'Igor'], ['Hamilton', 'Clarknet', 'Wenture'],
+            ['andry@nomil.invalid', 'sergio@nomail.invalid', 'igor@nomail.invalid']]
     xpath_name = "//*[@class='fitem required fitem_ftext  ']/div[2]/input"
     wait_for_xpath_element(context, 2, xpath_name)
     name = context.browser.find_elements_by_xpath(xpath_name)
-    xpath = "//*[@id='fitem_id_emailpending']/div[2]/a"
-    wait_for_xpath_element(context, 1, xpath)
-    cancell_change_password = context.browser.find_element_by_xpath(xpath)
-
+    try:
+        xpath = "//*[@id='fitem_id_emailpending']/div[@class='felement fstatic']/a"
+        wait_for_xpath_element(context, 1, xpath)
+        cancell_change_email = context.browser.find_element_by_xpath(xpath)
+        cancell_change_email.click()
+        print("done")
+    except:
+        pass
+    time.sleep(4)
     for key in name:
+
         if key.get_attribute('id') == "id_firstname":
             key.clear()
             insert_name = random_name(list[0])
@@ -339,35 +372,27 @@ def step_impl(context):
             global global_email
             global_email = insert_email
             key.send_keys(global_email)
-        # elif cancell == "Annulla cambio email":
-        #     cancell_change_password.click()
-        #     time.sleep(2)
-        #     key.clear()
-        #     insert_email = random_name(list[2])
-        #     global_email = insert_email
-        #     key.send_keys(global_email)
         else:
-            context.browser.execute_script("arguments[0].click();", xpath)
-            time.sleep(4)
-            key.clear()
-            insert_email = random_name(list[2])
-            global_email = insert_email
-            key.send_keys(global_email)
+            print("error")
+
 
 @step('clicks on "Aggiornamento profilo"')
 def step_impl(context):
-    context.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")    #scroll down page
+    context.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")  # scroll down page
     xpath_update = "//*[@class='felement fgroup']/input[1]"
     wait_for_xpath_element(context, 0.5, xpath_update)
     update_userprofile = context.browser.find_element_by_xpath(xpath_update).click()
-    xpath_btn_continua = "//*[@class='form-submit btn-primary']"  # button continua after approved change email adress
-    wait_for_xpath_element(context, 1, xpath_btn_continua)
-    btn_continua = context.browser.find_element_by_xpath(xpath_btn_continua)
+    try:
+        xpath_btn_continua = "//*[@class='form-submit btn-primary']"  # button continua after approved change email adress
+        wait_for_xpath_element(context, 1, xpath_btn_continua)
+        btn_continua = context.browser.find_element_by_xpath(xpath_btn_continua)
+        if btn_continua.get_attribute('value') == "Continua":
+            btn_continua.click()
+        else:
+            print("is not visible on the page")
+    except:
+        pass
 
-    if btn_continua.get_attribute('value') == "Continua":
-        btn_continua.click()
-    else:
-        print("i not visible on the page")
 
 @then('user\'s firstname, surname should be changed and email adress should have link "Annulla cambio email"')
 def step_impl(context):
