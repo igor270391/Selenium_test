@@ -336,22 +336,21 @@ def step_impl(context):
     time.sleep(3)
 
 
-@step('user inserts "user\'s firstname, last name, email"')
+@step('user clicks on "Annulla cambio email" and inserts user\'s firstname, last name, email"')
 def step_impl(context):
-    list = [['Andry', 'Sergio', 'Igor'], ['Hamilton', 'Clarknet', 'Wenture'],
-            ['andry@nomil.invalid', 'sergio@nomail.invalid', 'igor@nomail.invalid']]
-    xpath_name = "//*[@class='fitem required fitem_ftext  ']/div[2]/input"
-    wait_for_xpath_element(context, 2, xpath_name)
-    name = context.browser.find_elements_by_xpath(xpath_name)
     try:
         xpath = "//*[@id='fitem_id_emailpending']/div[@class='felement fstatic']/a"
         wait_for_xpath_element(context, 1, xpath)
         cancell_change_email = context.browser.find_element_by_xpath(xpath)
         cancell_change_email.click()
-        print("done")
     except:
         pass
-    time.sleep(4)
+    time.sleep(2)
+    list = [['Andry', 'Sergio', 'Igor'], ['Hamilton', 'Clarknet', 'Wenture'],
+            ['andry@nomil.invalid', 'sergio@nomail.invalid', 'igor@nomail.invalid']]
+    xpath_name = "//*[@class='fitem required fitem_ftext  ']/div[2]/input"
+    wait_for_xpath_element(context, 2, xpath_name)
+    name = context.browser.find_elements_by_xpath(xpath_name)
     for key in name:
 
         if key.get_attribute('id') == "id_firstname":
@@ -376,7 +375,7 @@ def step_impl(context):
             print("error")
 
 
-@step('clicks on "Aggiornamento profilo"')
+@step('user clicks on "Aggiornamento profilo" and confirm operation clicks on "Continua"')
 def step_impl(context):
     context.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")  # scroll down page
     xpath_update = "//*[@class='felement fgroup']/input[1]"
@@ -393,12 +392,11 @@ def step_impl(context):
     except:
         pass
 
-
-@then('user\'s firstname, surname should be changed and email adress should have link "Annulla cambio email"')
+@then("user's firstname, surname and email should be changed")
 def step_impl(context):
     expected_result = global_name + " " + global_lastname
     print(expected_result)
-    xpath_fullname = "//*[@class='page-context-header']/div[2]/h2"
+    xpath_fullname = "//*[@class='breadcrumb-nav']//li[3]/span/a/span"
     wait_for_xpath_element(context, 1, xpath_fullname)
     fullname = context.browser.find_element_by_xpath(xpath_fullname).text
     print(fullname)

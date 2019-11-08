@@ -5,6 +5,6 @@ Feature: check user's profile
     Given set up url address "login/index.php" and execute log in
     When user clicks on user's image profile on the left side bar
     And within the section "Dettagli dell'utente" user clicks on the button "modifica"
-    And user inserts "user's firstname, last name, email"
-    And clicks on "Aggiornamento profilo"
-    Then user's firstname, surname should be changed and email adress should have link "Annulla cambio email"
+    And user clicks on "Annulla cambio email" and inserts user's firstname, last name, email"
+    And user clicks on "Aggiornamento profilo" and confirm operation clicks on "Continua"
+    Then user's firstname, surname and email should be changed
