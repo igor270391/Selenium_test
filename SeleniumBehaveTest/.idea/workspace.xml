@@ -5,6 +5,7 @@
       <change afterPath="$PROJECT_DIR$/features/steps/main_steps.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/features/topNavigationBar.feature" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/features/user's_profile.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/user_privacy.feature" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names-0.3.0-py3.7.egg-info/PKG-INFO" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names-0.3.0-py3.7.egg-info/SOURCES.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names-0.3.0-py3.7.egg-info/dependency_links.txt" afterDir="false" />
@@ -22,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/Check status of programs.feature" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/features/lateralBlock.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/lateralBlock.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/login.feature" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +65,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\py\SeleniumBehaveTest\features" />
+      <recent name="D:\py\SeleniumBehaveTest\features\steps\steps" />
       <recent name="D:\py\SeleniumBehaveTest\features\steps" />
       <recent name="D:\py\SeleniumBehaveTest" />
     </key>
@@ -79,8 +82,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Behave.user's_profile.feature:user modifies personal user's data changing user's name, surname and email">
-    <configuration name="lateralBlock.feature:user closes sidebar for view home page in full screen" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
+  <component name="RunManager" selected="Behave.login.feature:login in one step with agreement to privacy of E-Learning platform Erickson: Expert Teacher">
+    <configuration name="lateralBlock.feature:user check if the right sidebar is accessible and navigable" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
       <module name="SeleniumBehaveTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -91,11 +94,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/lateralBlock.feature" />
-      <SCENRAIO_NAMES SCENRAIO_NAMES="user closes sidebar for view home page in full screen" />
+      <SCENRAIO_NAMES SCENRAIO_NAMES="user check if the right sidebar is accessible and navigable" />
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="lateralBlock.feature:user opens own user's profile from left sidebar" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
+    <configuration name="login.feature:login in one step with agreement to privacy of E-Learning platform Erickson: Expert Teacher" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
       <module name="SeleniumBehaveTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -105,8 +108,23 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/lateralBlock.feature" />
-      <SCENRAIO_NAMES SCENRAIO_NAMES="user opens own user's profile from left sidebar" />
+      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/login.feature" />
+      <SCENRAIO_NAMES SCENRAIO_NAMES="login in one step with agreement to privacy of E-Learning platform Erickson: Expert Teacher" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="login.feature:user changes the language in &quot;English (en)&quot;" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
+      <module name="SeleniumBehaveTest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/login.feature" />
+      <SCENRAIO_NAMES SCENRAIO_NAMES="user changes the language in &quot;English (en)&quot;" />
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
@@ -122,21 +140,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/user's_profile.feature" />
       <SCENRAIO_NAMES SCENRAIO_NAMES="user modifies personal user's data changing user's name, surname and email" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="user's_profile.feature:user opens own user's profile from left sidebar" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
-      <module name="SeleniumBehaveTest" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/user's_profile.feature" />
-      <SCENRAIO_NAMES SCENRAIO_NAMES="user opens own user's profile from left sidebar" />
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
@@ -164,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Behave.login.feature:login in one step with agreement to privacy of E-Learning platform Erickson: Expert Teacher" />
+        <item itemvalue="Behave.lateralBlock.feature:user check if the right sidebar is accessible and navigable" />
         <item itemvalue="Behave.user's_profile.feature:user modifies personal user's data changing user's name, surname and email" />
+        <item itemvalue="Behave.login.feature:user changes the language in &quot;English (en)&quot;" />
         <item itemvalue="Python.main_steps" />
-        <item itemvalue="Behave.user's_profile.feature:user opens own user's profile from left sidebar" />
-        <item itemvalue="Behave.lateralBlock.feature:user opens own user's profile from left sidebar" />
-        <item itemvalue="Behave.lateralBlock.feature:user closes sidebar for view home page in full screen" />
       </list>
     </recent_temporary>
   </component>
@@ -251,6 +254,9 @@
       <workItem from="1573124259813" duration="1185000" />
       <workItem from="1573216682542" duration="3250000" />
       <workItem from="1573226869473" duration="813000" />
+      <workItem from="1573633358690" duration="5959000" />
+      <workItem from="1573726538884" duration="5601000" />
+      <workItem from="1574152483962" duration="7035000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1568995380565</created>
@@ -340,7 +346,7 @@
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$Check_status_of_programs_feature_Check_Incourse_program.coverage" NAME="Check status of programs.feature:Check Incourse program Coverage Results" MODIFIED="1570464770019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_link_of_the_Media_Library_is_accessible_and_has_returned_Shell_ET___Media_library_integrata.coverage" NAME="topNavigationBar.feature:check if link of the Media Library is accessible and has returned Shell ET - Media library integrata Coverage Results" MODIFIED="1571137585499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_nvalid_username_and_valid_password_on_log_in.coverage" NAME="login.feature:the user enters nvalid username and valid password on log in Coverage Results" MODIFIED="1568647293534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$user_s_profile_feature_user_modifies_personal_user_s_data_changing_user_s_name__surname_and_email.coverage" NAME="user's_profile.feature:user modifies personal user's data changing user's name, surname and email Coverage Results" MODIFIED="1573227643116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$user_s_profile_feature_user_modifies_personal_user_s_data_changing_user_s_name__surname_and_email.coverage" NAME="user's_profile.feature:user modifies personal user's data changing user's name, surname and email Coverage Results" MODIFIED="1573634778090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login.coverage" NAME="login Coverage Results" MODIFIED="1568390700941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_the_user_enters_invalid_username_and_invalid_password_on_log_in.coverage" NAME="login.feature:the user enters invalid username and invalid password on log in Coverage Results" MODIFIED="1569852041068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_closes_sidebar_for_view_home_page_in_full_screen.coverage" NAME="lateralBlock.feature:user closes sidebar for view home page in full screen Coverage Results" MODIFIED="1571671737797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -352,15 +358,17 @@
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_opens_own_user_s_profile_from_left_sidebar.coverage" NAME="lateralBlock.feature:user opens own user's profile from left sidebar Coverage Results" MODIFIED="1572342193389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_link_of_the_Media_Library_has_returned_Shell_ET___Media_library_integrata_on_the_new_card.coverage" NAME="topNavigationBar.feature:check if link of the Media Library has returned Shell ET - Media library integrata on the new card Coverage Results" MODIFIED="1571052885251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$Check_status_of_programs_feature_Check_incourse_program.coverage" NAME="Check status of programs.feature:Check incourse program Coverage Results" MODIFIED="1570463121725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_user_changes_the_language_in__English__en__.coverage" NAME="login.feature:user changes the language in &quot;English (en)&quot; Coverage Results" MODIFIED="1570551511470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_user_changes_the_language_in__English__en__.coverage" NAME="login.feature:user changes the language in &quot;English (en)&quot; Coverage Results" MODIFIED="1573634244410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_user_execute_logs_out_from_portal_erikson.coverage" NAME="login.feature:user execute logs out from portal erikson Coverage Results" MODIFIED="1570551601664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_the_notification_menu_is_accessible.coverage" NAME="topNavigationBar.feature:check if the notification menu is accessible Coverage Results" MODIFIED="1571240003079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$environment.coverage" NAME="environment Coverage Results" MODIFIED="1568622357274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$main_steps.coverage" NAME="main_steps Coverage Results" MODIFIED="1572860127321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_the_message_menu_is_accessible.coverage" NAME="topNavigationBar.feature:check if the message menu is accessible Coverage Results" MODIFIED="1571225230171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$login_feature_login_in_one_step_with_agreement_to_privacy_of_E_Learning_platform_Erickson__Expert_Teacher.coverage" NAME="login.feature:login in one step with agreement to privacy of E-Learning platform Erickson: Expert Teacher Coverage Results" MODIFIED="1573638954314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_link_of_the_Curriculum_Formativo_is_accessible_and_has_returned_Curriculum.coverage" NAME="topNavigationBar.feature:check if link of the Curriculum Formativo is accessible and has returned Curriculum Coverage Results" MODIFIED="1571144203323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_login_in_one_step.coverage" NAME="lateralBlock.feature:login in one step Coverage Results" MODIFIED="1568991480863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$steps.coverage" NAME="steps Coverage Results" MODIFIED="1568390713964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
     <SUITE FILE_PATH="coverage/SeleniumBehaveTest$topNavigationBar_feature_check_if_the_user_s_menu_is_accessible.coverage" NAME="topNavigationBar.feature:check if the user's menu is accessible Coverage Results" MODIFIED="1571328917967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/SeleniumBehaveTest$lateralBlock_feature_user_check_if_the_right_sidebar_is_accessible_and_navigable.coverage" NAME="lateralBlock.feature:user check if the right sidebar is accessible and navigable Coverage Results" MODIFIED="1573637101289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

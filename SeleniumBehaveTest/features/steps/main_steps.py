@@ -101,7 +101,7 @@ def step_impl(context):
     context.browser.find_element_by_xpath(xpath_english_language).click()
 
 
-@then('User should has the page log-in in "{expected_result}" language')
+@then('User should be had the page log-in in "{expected_result}" language')
 def step_impl(context, expected_result):
     xpath_language_page = "//option[@value='en']"
     actual_result = context.browser.find_element_by_xpath(xpath_language_page).text
@@ -110,27 +110,39 @@ def step_impl(context, expected_result):
         assert print(expected_result)
 
 
-# lateralBlock.feature__________________________________________________________________________________________________
-# /login in one step----------------------------------------------------------------------------------------------------
-@given('set up url address "{text}" and execute log in')
-def step_impl(context, text):
+# /login in one step with agreement privacy
+@given('set up url address "{text}" and execute login with credentials "{username}" and "{password}" and consent site policy')
+def step_impl(context, text, username, password):
     context.settings = load(open('features\conf.yaml').read())
     url = context.settings['base_url']
     basic_url = 'https://{}/'.format(url)
     if 'staging' in url or 'dev' in url:
         context.browser.get(basic_url)
     context.browser.get('https://{}/'.format(url) + text)
-    time.sleep(2)
-    username = "i.senkiv"
-    password = "Totara_2019"
+    time.sleep(0.5)
     xpath_username_field = "//*[@id='username']"
     context.browser.find_element_by_xpath(xpath_username_field).send_keys(username)
     xpath_password_field = "//*[@id='password']"
     context.browser.find_element_by_xpath(xpath_password_field).send_keys(password)
     xpath_login_button = "//*[@id='loginbtn']"
     context.browser.find_element_by_xpath(xpath_login_button).submit()
-    time.sleep(3)
-
+    time.sleep(1)
+    #__Agreement privacy______________________
+    try:
+        xpath_text_privacy_declaration = "//*[contains(text(), 'Consenso')]"
+        declaration_text = context.browser.find_element_by_xpath(xpath_text_privacy_declaration)
+        context.browser.execute_script('arguments[0].scrollIntoView(true);', declaration_text)
+        xpath_agreement = "//div[@class='tf_element_input']/div/input"
+        agreement = context.browser.find_element_by_xpath(xpath_agreement)
+        if agreement.get_attribute("id") == "tfiid_option2_tool_sitepolicy_form_userconsentform___rd_0":
+            agreement.click()
+        else:
+            print("Radio button is not found")
+        xpath_bttn_send = "//div/input[@id='tfiid_submitbutton_tool_sitepolicy_form_userconsentform']"
+        wait_for_xpath_element(context, 0.5, xpath_bttn_send)
+        send_bttn = context.browser.find_element_by_xpath(xpath_bttn_send).click()
+    except:
+        pass
 
 # user closes lateral menu for view home page in full screen_______________________________________________________________-
 @step("user clicks on the button on the right corner of the sidebar to close and reopen it")
@@ -139,7 +151,6 @@ def step_impl(context):
     button = context.browser.find_element_by_xpath(btt_xpth)
     context.browser.execute_script("arguments[0].click();", button)
     time.sleep(1)
-
     class_name = button.get_attribute('class')
     if class_name == "fas fa-chevron-right":
         context.browser.execute_script("arguments[0].click();", button)
@@ -318,7 +329,7 @@ def step_impl(context):
 
 
 # user profile within the left sidebar------------------------------------------------------------------
-@when("user clicks on user's image profile on the left side bar")
+@step("click on user's image profile on the left side bar")
 def step_impl(context):
     xpath_users_image = "//*[@class='myprofileitem picture']/a"
     wait_for_xpath_element(context, 1, xpath_users_image)
@@ -328,15 +339,14 @@ def step_impl(context):
     # raise NotImplementedError(u'STEP: When user navigates to the right side bar')
 
 
-@step('within the section "Dettagli dell\'utente" user clicks on the button "modifica"')
+@step('within the section "Dettagli dell\'utente" click on "modifica"')
 def step_impl(context):
     xpath_btn_modified = "//*[@class='editprofile']/span/a"
     wait_for_xpath_element(context, 2, xpath_btn_modified)
     btn_modified = context.browser.find_element_by_xpath(xpath_btn_modified).click()
     time.sleep(3)
 
-
-@step('user clicks on "Annulla cambio email" and inserts user\'s firstname, last name, email"')
+@when('click on the link "Annulla cambio email" and insert user\'s firstname, last name, email"')
 def step_impl(context):
     try:
         xpath = "//*[@id='fitem_id_emailpending']/div[@class='felement fstatic']/a"
@@ -374,8 +384,7 @@ def step_impl(context):
         else:
             print("error")
 
-
-@step('user clicks on "Aggiornamento profilo" and confirm operation clicks on "Continua"')
+@step('click on "Aggiornamento profilo" and carry out modification clicking on "Continua"')
 def step_impl(context):
     context.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")  # scroll down page
     xpath_update = "//*[@class='felement fgroup']/input[1]"
@@ -401,3 +410,14 @@ def step_impl(context):
     fullname = context.browser.find_element_by_xpath(xpath_fullname).text
     print(fullname)
     assert expected_result == fullname
+
+# Scenario: user deny agreement policy from through user's profile
+@step('scroll down the page and focus on the section "Administration" and click on the link "Site policy consents"')
+def step_impl(context):
+    # xpath_target = "//*[@class='block col-md-12']/h3[contains(text(), 'Amministrazione')]"
+    xpath_target = "//ul[@class='mtul']/li[2]/span/a"
+    target = context.browser.find_element_by_xpath(xpath_target)
+    context.browser.execute_script('arguments[0].scrollIntoView(true);', target)
+
+@step('click on the names of the policies and select "Nego il consenso"')
+def step_impl(context):

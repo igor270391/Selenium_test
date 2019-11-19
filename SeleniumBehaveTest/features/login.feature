@@ -21,7 +21,7 @@ Feature: Login feature
     Given url address "login/index.php"
     When user navigate to drop down language menu
     And select English (en) language
-    Then User should has the page log-in in "en" language
+    Then User should be had the page log-in in "en" language
 
   Scenario: user execute logs out from portal erikson
     Given url address "login/index.php"
@@ -29,3 +29,6 @@ Feature: Login feature
     And user enters a password "Totara_2019"
     And click Login button
     Then navigate to menu dropdown end click esci
+
+  Scenario: login in one step with agreement to privacy of E-Learning platform Erickson: Expert Teacher
+    Given set up url address "login/index.php" and execute login with credentials "i.senkiv" and "Totara_2019" and consent site policy
