@@ -362,7 +362,6 @@ def step_impl(context):
     wait_for_xpath_element(context, 2, xpath_name)
     name = context.browser.find_elements_by_xpath(xpath_name)
     for key in name:
-
         if key.get_attribute('id') == "id_firstname":
             key.clear()
             insert_name = random_name(list[0])
@@ -418,6 +417,18 @@ def step_impl(context):
     xpath_target = "//ul[@class='mtul']/li[2]/span/a"
     target = context.browser.find_element_by_xpath(xpath_target)
     context.browser.execute_script('arguments[0].scrollIntoView(true);', target)
+    target.click()
 
 @step('click on the names of the policies and select "Nego il consenso"')
-def step_impl(context):
+def step_impl(context):                                                                                                          #if the list has more 2 index whoat will you do
+    xpath_policyname = "//*[@class='generaltable']/tbody/tr/td/a"
+    wait_for_xpath_element(context, 0.5, xpath_policyname)
+    policy_namelist = context.browser.find_elements_by_xpath(xpath_policyname)
+    # y = policy_name.get_attribute('text')
+    for policy in policy_namelist:
+        if policy.get_attribute('text') == "Albo Expert Teacher (non è obligatorio il consenso)":
+            time.sleep(1)
+            policy.click()
+            time.sleep(3)
+
+
