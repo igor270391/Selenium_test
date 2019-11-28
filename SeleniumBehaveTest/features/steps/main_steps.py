@@ -10,6 +10,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import *
+
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import StaleElementReferenceException
+from selenium.common.exceptions import ElementNotVisibleException
+from selenium.common.exceptions import ElementNotSelectableException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 
 # function random list
@@ -111,7 +119,8 @@ def step_impl(context, expected_result):
 
 
 # /login in one step with agreement privacy
-@given('set up url address "{text}" and execute login with credentials "{username}" and "{password}" and consent site policy')
+@given(
+    'set up url address "{text}" and execute login with credentials "{username}" and "{password}" and consent site policy')
 def step_impl(context, text, username, password):
     context.settings = load(open('features\conf.yaml').read())
     url = context.settings['base_url']
@@ -127,7 +136,7 @@ def step_impl(context, text, username, password):
     xpath_login_button = "//*[@id='loginbtn']"
     context.browser.find_element_by_xpath(xpath_login_button).submit()
     time.sleep(1)
-    #__Agreement privacy______________________
+    # __Agreement privacy______________________
     try:
         xpath_text_privacy_declaration = "//*[contains(text(), 'Consenso')]"
         declaration_text = context.browser.find_element_by_xpath(xpath_text_privacy_declaration)
@@ -143,6 +152,7 @@ def step_impl(context, text, username, password):
         send_bttn = context.browser.find_element_by_xpath(xpath_bttn_send).click()
     except:
         pass
+
 
 # user closes lateral menu for view home page in full screen_______________________________________________________________-
 @step("user clicks on the button on the right corner of the sidebar to close and reopen it")
@@ -346,6 +356,7 @@ def step_impl(context):
     btn_modified = context.browser.find_element_by_xpath(xpath_btn_modified).click()
     time.sleep(3)
 
+
 @when('click on the link "Annulla cambio email" and insert user\'s firstname, last name, email"')
 def step_impl(context):
     try:
@@ -383,6 +394,7 @@ def step_impl(context):
         else:
             print("error")
 
+
 @step('click on "Aggiornamento profilo" and carry out modification clicking on "Continua"')
 def step_impl(context):
     context.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")  # scroll down page
@@ -400,6 +412,7 @@ def step_impl(context):
     except:
         pass
 
+
 @then("user's firstname, surname and email should be changed")
 def step_impl(context):
     expected_result = global_name + " " + global_lastname
@@ -410,8 +423,9 @@ def step_impl(context):
     print(fullname)
     assert expected_result == fullname
 
+
 # Scenario: user deny agreement policy from through user's profile
-@step('scroll down the page and focus on the section "Administration" and click on the link "Site policy consents"')
+@step('scroll down the page at the section "Administration" and click on the link "Site policy consents"')
 def step_impl(context):
     # xpath_target = "//*[@class='block col-md-12']/h3[contains(text(), 'Amministrazione')]"
     xpath_target = "//ul[@class='mtul']/li[2]/span/a"
@@ -419,16 +433,34 @@ def step_impl(context):
     context.browser.execute_script('arguments[0].scrollIntoView(true);', target)
     target.click()
 
+
 @step('click on the names of the policies and select "Nego il consenso"')
-def step_impl(context):                                                                                                          #if the list has more 2 index whoat will you do
-    xpath_policyname = "//*[@class='generaltable']/tbody/tr/td/a"
+def step_impl(context):                                                     # for: - give me error at the end of execute
+    xpath_policyname = "//*[@class='generaltable']/tbody/tr[1]/td/a"
     wait_for_xpath_element(context, 0.5, xpath_policyname)
-    policy_namelist = context.browser.find_elements_by_xpath(xpath_policyname)
-    # y = policy_name.get_attribute('text')
-    for policy in policy_namelist:
-        if policy.get_attribute('text') == "Albo Expert Teacher (non è obligatorio il consenso)":
-            time.sleep(1)
-            policy.click()
-            time.sleep(3)
+    policy_namelist = context.browser.find_element_by_xpath(xpath_policyname)
 
+    if policy_namelist.get_attribute('text') == "Albo Expert Teacher (non è obligatorio il consenso)":
+        policy_namelist.click()
+    # user consent form (agree/disagree) of the policy
+        xpath_radiobtn = "//div[@class='totara_form_element_radios_radio']/input[@id='tfiid_option1_tool_sitepolicy_form_userconsentform___rd_1']"
+        wait_for_xpath_element(context, 1, xpath_radiobtn)
+        radio_btn = context.browser.find_element_by_xpath(xpath_radiobtn)
+#check if radio button is selected
+        xpath_submit_invia = "//div[@class='tf_element totara_form_element_action_button']/input"
+        if radio_btn.is_selected():
+            print("pass")
+            submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
+            time.sleep(2)
+        else:
+            radio_btn.click()
+            xpath_submit_invia = "//div[@class='tf_element totara_form_element_action_button']/input"
+            submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
+            time.sleep(2)
 
+# @step('press "Submit" and approve consent withheld clicking on the button "Elimina la mia autenticazione"')
+# def step_impl(context):
+#     xpath_submit_invia = "//*[@class='tf_element totara_form_element_action_button']/input"
+#     wait_for_xpath_element(context, 0.5, xpath_submit_invia)
+#     submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
+#     time.sleep(2)

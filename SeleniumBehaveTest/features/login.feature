@@ -23,7 +23,7 @@ Feature: Login feature
     And select English (en) language
     Then User should be had the page log-in in "en" language
 
-  Scenario: user execute logs out from portal erikson
+  Scenario: user execute log out from portal erikson
     Given url address "login/index.php"
     When user enters a username "i.senkiv"
     And user enters a password "Totara_2019"
