@@ -1,87 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68de7c45-aa88-436c-bba7-78e8e546beef" name="Default Changelist" comment="commit">
-      <change afterPath="$PROJECT_DIR$/features/sheet.list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/steps/main_steps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/topNavigationBar.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/user's_profile.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/user_privacy.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage-4.5.4.dist-info/DESCRIPTION.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage-4.5.4.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage-4.5.4.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage-4.5.4.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage-4.5.4.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage-4.5.4.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage-4.5.4.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage-4.5.4.dist-info/metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage-4.5.4.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/__main__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/annotate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/backunittest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/backward.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/bytecode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/cmdline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/collector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/control.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/debug.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/env.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/execfile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/files.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/fullcoverage/encodings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/html.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/htmlfiles/coverage_html.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/htmlfiles/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/htmlfiles/jquery.ba-throttle-debounce.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/htmlfiles/jquery.hotkeys.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/htmlfiles/jquery.isonscreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/htmlfiles/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/htmlfiles/jquery.tablesorter.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/htmlfiles/keybd_closed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/htmlfiles/keybd_open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/htmlfiles/pyfile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/htmlfiles/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/misc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/multiproc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/phystokens.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/pickle2json.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/plugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/plugin_support.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/python.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/pytracer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/report.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/results.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/summary.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/templite.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/tracer.cp37-win32.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/version.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/coverage/xmlreport.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names-0.3.0-py3.7.egg-info/PKG-INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names-0.3.0-py3.7.egg-info/SOURCES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names-0.3.0-py3.7.egg-info/dependency_links.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names-0.3.0-py3.7.egg-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names-0.3.0-py3.7.egg-info/installed-files.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names-0.3.0-py3.7.egg-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names/dist.all.last" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names/dist.female.first" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names/dist.male.first" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/names/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/coverage-3.7.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/coverage.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/coverage3.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/names-script.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/names.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/names.exe.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/Check status of programs.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/lateralBlock.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/lateralBlock.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/login.feature" afterDir="false" />
-    </list>
+    <list default="true" id="68de7c45-aa88-436c-bba7-78e8e546beef" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,6 +245,7 @@
       <workItem from="1574851899524" duration="9532000" />
       <workItem from="1574928802864" duration="9288000" />
       <workItem from="1574948976337" duration="3241000" />
+      <workItem from="1574961415663" duration="354000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1568995380565</created>
@@ -361,7 +282,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570629735001</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit">
+      <created>1574961625213</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574961625213</updated>
+    </task>
+    <task id="LOCAL-00007" summary="commit">
+      <created>1574961700219</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1574961700219</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
