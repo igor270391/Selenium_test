@@ -1,23 +1,8 @@
-import time
-import names  # (names.get_firstname)
-from behave import *
-from time import sleep
-from yaml import load
 import random
-import sqlite3
-from selenium.webdriver import ActionChains
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import TimeoutException
-from selenium.common.exceptions import *
+import time
 
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import StaleElementReferenceException
-from selenium.common.exceptions import ElementNotVisibleException
-from selenium.common.exceptions import ElementNotSelectableException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+from behave import *
+from selenium.webdriver.common.keys import Keys
 
 
 # function random list
@@ -49,35 +34,35 @@ def wait_for_xpath_element(context, time_sec, xpath_element):
 # Login feature
 @given('url address "{text}"')
 def step_impl(context, text):
-    context.settings = load(open('features\conf.yaml').read())
-    url = context.settings['base_url']
-    basic_url = 'https://{}/'.format(url)
-    if 'staging' in url or 'dev' in url:
-        context.browser.get(basic_url)
-    context.browser.get('https://{}/'.format(url) + text)
-    time.sleep(2)
+    # context.settings = load(open('features\conf.yaml').read())
+    # url = context.settings['base_url']
+    # basic_url = 'https://{}/'.format(url)
+    # if 'staging' in url or 'dev' in url:
+    #     context.browser.get(basic_url)
+    # context.browser.get('https://{}/'.format(url) + text)
+    # time.sleep(2)
+    context.browser.get(context.base_url + '/' + text)
 
-
-@when('user enters a username "{user_name}"')
+@when('type username "{user_name}"')
 def step_impl(context, user_name):
     xpath_username_field = "//*[@id='username']"
     context.browser.find_element_by_xpath(xpath_username_field).send_keys(user_name)
 
 
-@step('user enters a password "{password}"')
+@step('type password "{password}"')
 def step_impl(context, password):
     xpath_password_field = "//*[@id='password']"
     context.browser.find_element_by_xpath(xpath_password_field).send_keys(password)
 
 
-@step("click Login button")
+@step("click on Login")
 def step_impl(context):
     xpath_login_button = "//*[@id='loginbtn']"
     context.browser.find_element_by_xpath(xpath_login_button).click()
     time.sleep(3)
 
 
-@then('I should have a title "{title_test}"')
+@then('the title of the current page should be "{title_test}"')
 def step_impl(context, title_test):
     def step_impl(context, title_test):
         # I can use also less complicated way like "//*[text()='et.erickson.it: Expert Teacher']"
@@ -88,7 +73,7 @@ def step_impl(context, title_test):
 
 
 # Login feature with invalid credential__________________________________________________________________________________
-@then('I should have a message "{expected_errore_message}"')
+@then('should appear the message "{expected_errore_message}"')
 def step_impl(context, expected_errore_message):
     xpath_errore_message = "//*[@id='loginerrormessage']"
     actual_result = context.browser.find_element_by_xpath(xpath_errore_message).text
@@ -99,6 +84,7 @@ def step_impl(context, expected_errore_message):
 @when("user navigate to drop down language menu")
 def step_impl(context):
     xpath_menu_language_dropdown = "//*[@class='custom-select langmenu']"
+    wait_for_xpath_element(context, 0.5, xpath_menu_language_dropdown)
     dropdown_language_menu = context.browser.find_element_by_xpath(xpath_menu_language_dropdown).click()
 
 
@@ -109,7 +95,7 @@ def step_impl(context):
     context.browser.find_element_by_xpath(xpath_english_language).click()
 
 
-@then('User should be had the page log-in in "{expected_result}" language')
+@then('user\'s login page should be in "{expected_result}"')
 def step_impl(context, expected_result):
     xpath_language_page = "//option[@value='en']"
     actual_result = context.browser.find_element_by_xpath(xpath_language_page).text
@@ -119,15 +105,9 @@ def step_impl(context, expected_result):
 
 
 # /login in one step with agreement privacy
-@given(
-    'set up url address "{text}" and execute login with credentials "{username}" and "{password}" and consent site policy')
+@given('set up url address "{text}" and execute login typing "{username}" and "{password}" and agree site policies')
 def step_impl(context, text, username, password):
-    context.settings = load(open('features\conf.yaml').read())
-    url = context.settings['base_url']
-    basic_url = 'https://{}/'.format(url)
-    if 'staging' in url or 'dev' in url:
-        context.browser.get(basic_url)
-    context.browser.get('https://{}/'.format(url) + text)
+    context.browser.get(context.base_url + '/' + text)
     time.sleep(0.5)
     xpath_username_field = "//*[@id='username']"
     context.browser.find_element_by_xpath(xpath_username_field).send_keys(username)
@@ -135,7 +115,7 @@ def step_impl(context, text, username, password):
     context.browser.find_element_by_xpath(xpath_password_field).send_keys(password)
     xpath_login_button = "//*[@id='loginbtn']"
     context.browser.find_element_by_xpath(xpath_login_button).submit()
-    time.sleep(1)
+    time.sleep(0.5)
     # __Agreement privacy______________________
     try:
         xpath_text_privacy_declaration = "//*[contains(text(), 'Consenso')]"
@@ -192,7 +172,7 @@ def step_impl(context):
     if expected_result_a.is_displayed():
         print(expected_result_a)
         if expected_result_b.is_displayed():
-            print("both element visible on the screen!")
+            print("both elements are visible on the screen!")
     else:
         raise NameError('Elements there are not visible on the screen!!!')
 
@@ -203,14 +183,16 @@ def step_impl(context):
     xpath_user_action_menu = "//*[@class='userbutton']"
     user_menu = context.browser.find_element_by_xpath(xpath_user_action_menu).click()
     time.sleep(0.5)
-    xpath_list = "//*[@id='action-menu-0-menu']/li/a"
-    options = context.browser.find_elements_by_xpath(xpath_list)
-    for i in options:
-        if "Esci".upper() in i.text:
-            i.click()
-        time.sleep(1)
-    else:
-        raise NameError("Errore!!!")
+    xpath_list = "//*[@class='menu  align-tr-br']/li/a[@aria-labelledby='actionmenuaction-6']"
+    wait_for_xpath_element(context, 0.4, xpath_list)
+    options = context.browser.find_element_by_xpath(xpath_list).click()
+    time.sleep(2)
+    # for i in options:
+    #     if "Esci".upper() in i.text:
+    #         i.click()
+    #     else:
+    #         print("errore")
+
 
 
 # topNavigationBar.feature
@@ -295,7 +277,7 @@ def step_impl(context):
 
 
 # ------------------NOTIFICHE------------------------------------------------
-@when('user navigates on top navigation bar click on the bell item that open and close notification menu')
+@when('user navigates on top navigation bar click on the bell item that expand and close notification menu')
 def step_impl(context):
     xpath_notification = "//*[@class='totaraNav_prim--side']/div[4]/div"
     wait_for_xpath_element(context, 1, xpath_notification)
@@ -320,7 +302,7 @@ def step_impl(context):
 
 
 # ------------------User MENU------------------------------------------------
-@when("user navigates on top navigation bar click on the user text name that open user's menu")
+@when("user navigates on top navigation bar clicks on the user\'s text name")
 def step_impl(context):
     xpath_user_action_menu = "//*[@id='action-menu-0']/ul/li/a/span[@class='userbutton']"
     user_menu = context.browser.find_element_by_xpath(xpath_user_action_menu)
@@ -427,40 +409,184 @@ def step_impl(context):
 # Scenario: user deny agreement policy from through user's profile
 @step('scroll down the page at the section "Administration" and click on the link "Site policy consents"')
 def step_impl(context):
-    # xpath_target = "//*[@class='block col-md-12']/h3[contains(text(), 'Amministrazione')]"
     xpath_target = "//ul[@class='mtul']/li[2]/span/a"
     target = context.browser.find_element_by_xpath(xpath_target)
     context.browser.execute_script('arguments[0].scrollIntoView(true);', target)
     target.click()
 
 
-@step('click on the names of the policies and select "Nego il consenso"')
-def step_impl(context):                                                     # for: - give me error at the end of execute
-    xpath_policyname = "//*[@class='generaltable']/tbody/tr[1]/td/a"
-    wait_for_xpath_element(context, 0.5, xpath_policyname)
-    policy_namelist = context.browser.find_element_by_xpath(xpath_policyname)
+# @step('click on the name of policy "{name_policy}"')
+# def step_impl(context, name_policy):                                                     # for: - loop give me an error at the end of execute
+#     xpath_policyname = "//*[@class='generaltable']/tbody/tr[1]/td/a"
+#     wait_for_xpath_element(context, 0.5, xpath_policyname)
+#     policy_namelist = context.browser.find_element_by_xpath(xpath_policyname)
+#     if policy_namelist.get_attribute('text') == name_policy:
+#         policy_namelist.click()
+#     else:
+#         print("The name of the policy doesn't exist")
 
-    if policy_namelist.get_attribute('text') == "Albo Expert Teacher (non è obligatorio il consenso)":
-        policy_namelist.click()
-    # user consent form (agree/disagree) of the policy
-        xpath_radiobtn = "//div[@class='totara_form_element_radios_radio']/input[@id='tfiid_option1_tool_sitepolicy_form_userconsentform___rd_1']"
-        wait_for_xpath_element(context, 1, xpath_radiobtn)
-        radio_btn = context.browser.find_element_by_xpath(xpath_radiobtn)
-#check if radio button is selected
+@step('click on the name of policy "{name_policy}"')
+def step_impl(context, name_policy):                                                     # for: - loop give me an error at the end of execute
+    xpath_policyname = "//*[@class='generaltable']/tbody/tr/td/a"
+    wait_for_xpath_element(context, 0.5, xpath_policyname)
+    policy_namelist = context.browser.find_elements_by_xpath(xpath_policyname)
+    for i in policy_namelist:
+        if i.get_attribute('text') == name_policy:
+            i.click()
+            break
+
+    # context.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+@step('select alternative choice for optional privacy "{your_choice}" and press invia')
+def step_impl(context, your_choice):
+    context.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    if your_choice == "Nego il consenso":
+        xpath_radiobtn_disagree = "//div[@class='totara_form_element_radios_radio']/input[@id='tfiid_option1_tool_sitepolicy_form_userconsentform___rd_1']"
+        your_choice = xpath_radiobtn_disagree
+        wait_for_xpath_element(context, 1, your_choice)
+        radio_btn = context.browser.find_element_by_xpath(your_choice)
+    # check if radio button is selected
         xpath_submit_invia = "//div[@class='tf_element totara_form_element_action_button']/input"
         if radio_btn.is_selected():
-            print("pass")
             submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
-            time.sleep(2)
         else:
             radio_btn.click()
-            xpath_submit_invia = "//div[@class='tf_element totara_form_element_action_button']/input"
             submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
-            time.sleep(2)
+    elif your_choice == "Do il consenso":
+        xpath_radiobtn_agree = "//div[@class='totara_form_element_radios_radio']/input[@id='tfiid_option1_tool_sitepolicy_form_userconsentform___rd_0']"
+        your_choice = xpath_radiobtn_agree
+        wait_for_xpath_element(context, 1, your_choice)
+        radio_btn = context.browser.find_element_by_xpath(your_choice)
+        # check if radio button is selected
+        xpath_submit_invia = "//div[@class='tf_element totara_form_element_action_button']/input"
+        if radio_btn.is_selected():
+            submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
+        else:
+            radio_btn.click()
+            submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
 
-# @step('press "Submit" and approve consent withheld clicking on the button "Elimina la mia autenticazione"')
-# def step_impl(context):
-#     xpath_submit_invia = "//*[@class='tf_element totara_form_element_action_button']/input"
-#     wait_for_xpath_element(context, 0.5, xpath_submit_invia)
-#     submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
-#     time.sleep(2)
+
+@then("user should be redirected to the personal dashboard")
+def step_impl(context):
+    xpath_urldashboard = "//div[@class='container-fluid mt-topmenu']/ul/li[2]/a"
+    url_dashboard = context.browser.find_element_by_xpath(xpath_urldashboard)
+    get_link = url_dashboard.get_attribute('href')
+    currentt_url = "https://testet.mediatouch.it/totara/dashboard/index.php"
+    assert get_link == currentt_url
+
+#user denies MANDATORY agreement policy through user's profile
+@step('select alternative choice for mandatory privacy "{your_choice}" and press invia')
+def step_impl(context, your_choice):
+    if your_choice == "Nego il consenso":
+        xpath_radiobtn_disagree = "//div[@class='totara_form_element_radios_radio']/input[@id='tfiid_option2_tool_sitepolicy_form_userconsentform___rd_1']"
+        your_choice = xpath_radiobtn_disagree
+        wait_for_xpath_element(context, 1, your_choice)
+        radio_btn = context.browser.find_element_by_xpath(your_choice)
+    # check if radio button is selected
+        xpath_submit_invia = "//div[@class='tf_element totara_form_element_action_button']/input"
+        if radio_btn.is_selected():
+            submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
+        else:
+            radio_btn.click()
+            submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
+    elif your_choice == "Do il consenso":
+        xpath_radiobtn_agree = "//div[@class='totara_form_element_radios_radio']/input[@id='tfiid_option2_tool_sitepolicy_form_userconsentform___rd_0']"
+        your_choice = xpath_radiobtn_agree
+        wait_for_xpath_element(context, 1, your_choice)
+        radio_btn = context.browser.find_element_by_xpath(your_choice)
+        # check if radio button is selected
+        xpath_submit_invia = "//div[@class='tf_element totara_form_element_action_button']/input"
+        if radio_btn.is_selected():
+            submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
+        else:
+            radio_btn.click()
+            submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
+
+@then('should appear pup-up massage with header "{massage}"')
+def step_impl(context, massage):
+    xpath_submit_invia = "//*[@class='buttons']/div[2]/form/div/input[@type='submit']"
+    wait_for_xpath_element(context, 1, xpath_submit_invia)
+    title = context.browser.title
+    assert massage == title
+
+
+@step('approve consent withheld clicking on the button "Elimina la mia autenticazione"')
+def step_impl(context):
+    xpath_submit_invia = "//*[@class='buttons']/div[2]/form/div/input[@type='submit']"
+    wait_for_xpath_element(context, 0.5, xpath_submit_invia)
+    submit_invia = context.browser.find_element_by_xpath(xpath_submit_invia).click()
+    time.sleep(2)
+
+
+@then('user should be logged out end redirected on the page "{title}"')
+def step_impl(context, title):
+    actual_title = context.browser.title
+    assert title == actual_title
+
+@when('execute login with credentials "{username}" and "{password}"')
+def step_impl(context, username, password):
+    xpath_username_field = "//*[@id='username']"
+    wait_for_xpath_element(context, 1, xpath_username_field)
+    context.browser.find_element_by_xpath(xpath_username_field).send_keys(username)
+    xpath_password_field = "//*[@id='password']"
+    context.browser.find_element_by_xpath(xpath_password_field).send_keys(password)
+    xpath_login_button = "//*[@id='loginbtn']"
+    context.browser.find_element_by_xpath(xpath_login_button).submit()
+
+@then('should be appeared mandatory policy "{name_policy}"')
+def step_impl(context, name_policy):
+    actual_title = context.browser.title
+    assert name_policy == actual_title
+
+
+# activity completion
+@step('go into the course "{course_id}"')
+def step_impl(context, course_id):
+    context.browser.get(context.base_url + '/' + course_id)
+
+@then('expanding the drop down menu of Video Content, the activity with "{id_activity}" shouldn\'t be completed')
+def step_impl(context, id_activity):
+    xpath_activity = "//*[@class='mtcourse_adv_cont']/h3[@id='mtadvh1']/i"
+    wait_for_xpath_element(context, 0.5, xpath_activity)
+    activity_position = context.browser.find_element_by_xpath(xpath_activity).click()
+    xpath_check = "//*[@id='mtcontentadv1']/div/span[@class='mtauto_completion']/span[1]"
+# verify if activity is completed
+    xpth_url_activity = "//*[@id='mtcontentadv1']/div/span/a"
+    check = context.browser.find_element_by_xpath(xpath_check).get_attribute('data-flex-icon')
+    if check == "core|i/completion-auto-y":
+        print("The Video Activity has already completed!")
+#click on video content
+        xpath_nameActivity = "//*[@id='mtcontentadv1']/div/span[@class='mttitleact']/a"
+        wait_for_xpath_element(context, 0.5, xpath_nameActivity)
+        nameActivity = context.browser.find_element_by_xpath(xpath_nameActivity).click()
+# go to "impostazioni of video content, scroll down the page and select "activity completion and remove data""
+        xpath_impostazioni = "//*[@class='type_setting depth_2 item_with_icon']/p[@tabindex='-1']/a[contains(text(), 'Impostazioni')]"
+        wait_for_xpath_element(context, 0.5, xpath_impostazioni)
+        impostazioni = context.browser.find_element_by_xpath(xpath_impostazioni).click()
+        time.sleep(0.5)
+        xpath_target = "//*[@id='id_activitycompletionheader']/legend/a/span"
+        target_actCompletion = context.browser.find_element_by_xpath(xpath_target)
+        context.browser.execute_script('arguments[0].scrollIntoView(true);', target_actCompletion)
+        target_actCompletion.click()
+        assert target_actCompletion.get_attribute('data-flex-icon') == 'collapsed'
+# Unlock completion and purge completion data
+        xpath_submit = "//*[@class='felement fsubmit']/input[@id='id_unlockcompletion']"
+        deleteData = context.browser.find_element_by_xpath(xpath_submit).click()
+# click on the button "Save and return to Course"
+        xpath_returnCourse = "//*[@id='fgroup_id_buttonar']/div/input[@name='submitbutton2']"
+        wait_for_xpath_element(context, 0.5, xpath_returnCourse)
+        returnCourse = context.browser.find_element_by_xpath(xpath_returnCourse)
+        context.browser.execute_script('arguments[0].scrollIntoView(true);', returnCourse)
+        returnCourse.click()
+        print("The Video Activity ins't completed!")
+        wait_for_xpath_element(context, 0.5, xpath_activity)
+        activity_position = context.browser.find_element_by_xpath(xpath_activity).click()
+        check = context.browser.find_element_by_xpath(xpath_check).get_attribute('data-flex-icon')
+        assert check == 'core|i/completion-auto-n'
+        id_url_activity = context.browser.find_element_by_xpath(xpth_url_activity).get_attribute('href')
+        assert id_url_activity[-6:] == id_activity
+    else:
+        check = context.browser.find_element_by_xpath(xpath_check).get_attribute('data-flex-icon')
+        id_url_activity = context.browser.find_element_by_xpath(xpth_url_activity).get_attribute('href')
+        assert check == 'core|i/completion-auto-n' and id_url_activity[-6:] == id_activity
+        print("The activity isn't completed!")
